@@ -16,14 +16,19 @@ class SimModel {
     let generationsPerFrame: Int = 1
 
     private var engine = SimEngine()
+    private var levelGrid: [[Double]] = []
 
     init() {
-        generation = engine.generation
+        generation = 0
         cellsPerEdge = engine.cellsPerEdge
+        levelGrid = Array(
+            repeating: Array(repeating: 0.0, count: cellsPerEdge),
+            count: cellsPerEdge
+        )
     }
 
     func level(w: Int, h: Int) -> Double {
-        engine.level(w: w, h: h)
+        levelGrid[w][h]
     }
 
     func seedRandomly() {
@@ -38,8 +43,9 @@ class SimModel {
                 print("Max A: \(engine.maxA()), Max B: \(engine.maxB())")
                 frame += 1
             }
-            engine.evolve()
-            generation = engine.generation
+            let evolveResult = engine.evolve()
+            levelGrid = evolveResult.grid
+            generation = evolveResult.generation
         }
     }
 }

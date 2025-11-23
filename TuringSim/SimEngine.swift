@@ -107,7 +107,7 @@ class SimEngine {
         }
     }
 
-    func evolve(count: Int = 1) {
+    func evolve(count: Int = 1) -> (generation: Int, grid:[[Double]]) {
         for _ in 0..<count {
             diffuseDeltaGrid()
             for w in 0..<cellsPerEdge {
@@ -126,6 +126,19 @@ class SimEngine {
             }
             generation += 1
         }
+        return (generation: generation, grid: levelGrid())
+    }
+
+    func levelGrid() -> [[Double]] {
+        var grid: [[Double]] = []
+        for w in 0..<cellsPerEdge {
+            var row: [Double] = []
+            for h in 0..<cellsPerEdge {
+                row.append(simGrid[w][h].level())
+            }
+            grid.append(row)
+        }
+        return grid
     }
 
     func seed(x: Int, y: Int) {
