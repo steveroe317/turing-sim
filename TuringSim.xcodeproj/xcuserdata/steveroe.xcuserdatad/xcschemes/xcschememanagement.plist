@@ -4,10 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TuringSim.xcscheme_^#shared#^_</key>
+		<key>TuringSim.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2B8345AD2ED25A7000227F52</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2B8345BA2ED25A7200227F52</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2B8345C42ED25A7200227F52</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
