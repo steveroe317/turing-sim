@@ -15,7 +15,7 @@ class SimModel {
     var frame = 0
     let generationsPerFrame: Int = 1
 
-    private var engine = SimEngine()
+    private var engine = SimEngineGraph()
     private var levelGrid: [[Double]] = []
 
     init() {
@@ -35,12 +35,12 @@ class SimModel {
         engine.seedRandomly()
     }
 
-    func evolve(count: Int = 1) {
+    func evolve(for count: Int = 1) {
         for _ in 0..<count {
-            print("generation: \(generation)")
+            //print("generation: \(generation)")
             if generation % generationsPerFrame == 0 {
-                print("frame: \(frame)")
-                print("Max A: \(engine.maxA()), Max B: \(engine.maxB())")
+                //print("frame: \(frame)")
+                //print("Max A: \(engine.maxA()), Max B: \(engine.maxB())")
                 frame += 1
             }
             let evolveResult = engine.evolve()

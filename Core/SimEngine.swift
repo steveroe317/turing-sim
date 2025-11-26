@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SimEngine {
+public class SimEngine {
     let cellsPerEdge = 101
     let seedRadius = 5
     var generation: Int = 0
@@ -19,8 +19,7 @@ class SimEngine {
     let k = 0.117
     let r = 1.0
 
-    var simGrid = [[SimCell]]()
-    private var evolveGrid = [[SimCell]]()
+    private var simGrid = [[SimCell]]()
     private var deltaGrid = [[SimCell]]()
 
     init() {
@@ -67,15 +66,12 @@ class SimEngine {
         return max
     }
 
-    func level(w: Int, h: Int) -> Double {
-        simGrid[w][h].level()
-    }
-
     func diffuseDeltaGrid() {
 
         for w in 0..<cellsPerEdge {
             for h in 0..<cellsPerEdge {
-                deltaGrid[w][h].clear()
+                deltaGrid[w][h].A = 0.0
+                deltaGrid[w][h].B = 0.0
             }
         }
 
@@ -107,7 +103,7 @@ class SimEngine {
         }
     }
 
-    func evolve(count: Int = 1) -> (generation: Int, grid:[[Double]]) {
+    func evolve(for count: Int = 1) -> (generation: Int, grid:[[Double]]) {
         for _ in 0..<count {
             diffuseDeltaGrid()
             for w in 0..<cellsPerEdge {

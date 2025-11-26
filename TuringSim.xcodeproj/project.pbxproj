@@ -23,11 +23,36 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2B8345E42ED37FF500227F52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2B8345AE2ED25A7000227F52 /* TuringSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345BB2ED25A7200227F52 /* TuringSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345C52ED25A7200227F52 /* TuringSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B8345E62ED37FF500227F52 /* TuringTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TuringTool; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2B8346122ED38D9400227F52 /* Exceptions for "Core" folder in "TuringTool" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SimCell.swift,
+				SimEngine.swift,
+				SimEngineGraph.swift,
+			);
+			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2B8345B02ED25A7000227F52 /* TuringSim */ = {
@@ -43,6 +68,19 @@
 		2B8345C82ED25A7200227F52 /* TuringSimUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TuringSimUITests;
+			sourceTree = "<group>";
+		};
+		2B8345E72ED37FF500227F52 /* TuringTool */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TuringTool;
+			sourceTree = "<group>";
+		};
+		2B8346102ED38D3900227F52 /* Core */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2B8346122ED38D9400227F52 /* Exceptions for "Core" folder in "TuringTool" target */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,15 +107,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2B8345E32ED37FF500227F52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2B8345A52ED25A7000227F52 = {
 			isa = PBXGroup;
 			children = (
+				2B8346102ED38D3900227F52 /* Core */,
 				2B8345B02ED25A7000227F52 /* TuringSim */,
 				2B8345BE2ED25A7200227F52 /* TuringSimTests */,
 				2B8345C82ED25A7200227F52 /* TuringSimUITests */,
+				2B8345E72ED37FF500227F52 /* TuringTool */,
 				2B8345AF2ED25A7000227F52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +135,7 @@
 				2B8345AE2ED25A7000227F52 /* TuringSim.app */,
 				2B8345BB2ED25A7200227F52 /* TuringSimTests.xctest */,
 				2B8345C52ED25A7200227F52 /* TuringSimUITests.xctest */,
+				2B8345E62ED37FF500227F52 /* TuringTool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +157,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				2B8345B02ED25A7000227F52 /* TuringSim */,
+				2B8346102ED38D3900227F52 /* Core */,
 			);
 			name = TuringSim;
 			packageProductDependencies = (
@@ -163,6 +212,28 @@
 			productReference = 2B8345C52ED25A7200227F52 /* TuringSimUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		2B8345E52ED37FF500227F52 /* TuringTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B8345EA2ED37FF500227F52 /* Build configuration list for PBXNativeTarget "TuringTool" */;
+			buildPhases = (
+				2B8345E22ED37FF500227F52 /* Sources */,
+				2B8345E32ED37FF500227F52 /* Frameworks */,
+				2B8345E42ED37FF500227F52 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2B8345E72ED37FF500227F52 /* TuringTool */,
+			);
+			name = TuringTool;
+			packageProductDependencies = (
+			);
+			productName = TuringTool;
+			productReference = 2B8345E62ED37FF500227F52 /* TuringTool */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +255,9 @@
 						CreatedOnToolsVersion = 26.1;
 						TestTargetID = 2B8345AD2ED25A7000227F52;
 					};
+					2B8345E52ED37FF500227F52 = {
+						CreatedOnToolsVersion = 26.1;
+					};
 				};
 			};
 			buildConfigurationList = 2B8345A92ED25A7000227F52 /* Build configuration list for PBXProject "TuringSim" */;
@@ -203,6 +277,7 @@
 				2B8345AD2ED25A7000227F52 /* TuringSim */,
 				2B8345BA2ED25A7200227F52 /* TuringSimTests */,
 				2B8345C42ED25A7200227F52 /* TuringSimUITests */,
+				2B8345E52ED37FF500227F52 /* TuringTool */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +322,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2B8345C12ED25A7200227F52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B8345E22ED37FF500227F52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -535,6 +617,32 @@
 			};
 			name = Release;
 		};
+		2B8345EB2ED37FF500227F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UU7QAR4ZXB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2B8345EC2ED37FF500227F52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UU7QAR4ZXB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -570,6 +678,15 @@
 			buildConfigurations = (
 				2B8345D62ED25A7200227F52 /* Debug */,
 				2B8345D72ED25A7200227F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B8345EA2ED37FF500227F52 /* Build configuration list for PBXNativeTarget "TuringTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B8345EB2ED37FF500227F52 /* Debug */,
+				2B8345EC2ED37FF500227F52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

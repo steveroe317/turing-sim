@@ -1,0 +1,187 @@
+//
+//  SimEngineGraph.swift
+//  TuringSim
+//
+//  Created by Steve Roe on 11/23/25.
+//
+
+import Foundation
+
+public class SimEngineGraph {
+    let cellsPerEdge = 201
+    var totalCells = 201 * 201
+    let seedRadius = 5
+    var generation: Int = 0
+
+    // Gray-Scott model parameters
+    let dA = 1.0
+    let dB = 0.5
+    let f = 0.055
+    let k = 0.117
+    let r = 1.0
+
+    private var A = [Double]()
+    private var B = [Double]()
+    private var diffusedA = [Double]()
+    private var diffusedB = [Double]()
+
+    struct DiffusionLink {
+        let target: Int
+        let weight: Double
+    }
+
+    private var diffusionLinksA = [[DiffusionLink]]()
+    private var diffusionLinksB = [[DiffusionLink]]()
+
+    init() {
+        totalCells = cellsPerEdge * cellsPerEdge
+        A = Array(repeating: 1.0, count: totalCells)
+        B = Array(repeating: 0.0, count: totalCells)
+        diffusedA = Array(repeating: 1.0, count: totalCells)
+        diffusedB = Array(repeating: 0.0, count: totalCells)
+        diffusionLinksA = Array(repeating: [], count: totalCells)
+        diffusionLinksB = Array(repeating: [], count: totalCells)
+        populateDiffusionLinks()
+        seed(x: cellsPerEdge / 2, y: cellsPerEdge / 2)
+    }
+
+    func planeCoordinates(fromLinear offset: Int) -> (x: Int, y: Int) {
+        let (q, r) = offset.quotientAndRemainder(dividingBy: cellsPerEdge)
+
+        return (x: q, y: r)
+    }
+
+    func linearCoordinates(fromX x: Int, fromY y: Int) -> Int {
+        return x * cellsPerEdge + y
+    }
+
+    func populateDiffusionLinks() {
+        diffusionLinksA = Array(repeating: [], count: totalCells)
+        diffusionLinksB = Array(repeating: [], count: totalCells)
+
+        for w in 0..<cellsPerEdge {
+            for h in 0..<cellsPerEdge {
+                let sourceIndex = linearCoordinates(fromX: w, fromY: h)
+                for dw in -1...1 {
+                    let w_target = (w + dw + cellsPerEdge) % cellsPerEdge
+                    for dh in -1...1 {
+                        let h_target = (h + dh + cellsPerEdge) % cellsPerEdge
+                        let targetIndex = linearCoordinates(
+                            fromX: w_target,
+                            fromY: h_target
+                        )
+                        if dw == 0 && dh == 0 {
+                            diffusionLinksA[sourceIndex].append(
+                                DiffusionLink(target: targetIndex, weight: -dA)
+                            )
+                            diffusionLinksB[sourceIndex].append(
+                                DiffusionLink(target: targetIndex, weight: -dB)
+                            )
+                        } else if dw == 0 || dh == 0 {
+                            diffusionLinksA[sourceIndex].append(
+                                DiffusionLink(
+                                    target: targetIndex,
+                                    weight: 0.2 * dA
+                                )
+                            )
+                            diffusionLinksB[sourceIndex].append(
+                                DiffusionLink(
+                                    target: targetIndex,
+                                    weight: 0.2 * dB
+                                )
+                            )
+                        } else {
+                            diffusionLinksA[sourceIndex].append(
+                                DiffusionLink(
+                                    target: targetIndex,
+                                    weight: 0.05 * dA
+                                )
+                            )
+                            diffusionLinksB[sourceIndex].append(
+                                DiffusionLink(
+                                    target: targetIndex,
+                                    weight: 0.05 * dB
+                                )
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    func maxA() -> Double {
+        return A.max() ?? -1.0
+    }
+
+    func maxB() -> Double {
+        return B.max() ?? -1.0
+    }
+
+    func diffuse() {
+
+        for j in 0..<totalCells {
+            diffusedA[j] = 0.0
+            diffusedB[j] = 0.0
+        }
+
+        for j in 0..<totalCells {
+            for link in diffusionLinksA[j] {
+                diffusedA[link.target] += A[j] * link.weight
+            }
+            for link in diffusionLinksB[j] {
+                diffusedB[link.target] += B[j] * link.weight
+            }
+        }
+    }
+
+    func evolve(for count: Int = 1) -> (generation: Int, grid: [[Double]]) {
+        for _ in 0..<count {
+            diffuse()
+            for j in 0..<totalCells {
+                let a =
+                    A[j] + diffusedA[j] + f * (1.0 - A[j]) - r * A[j] * B[j]
+                    * B[j]
+                let b = B[j] + diffusedB[j] - k * B[j] + r * A[j] * B[j] * B[j]
+                A[j] = a
+                B[j] = b
+            }
+            generation += 1
+        }
+        return (generation: generation, grid: levelGrid())
+    }
+
+    func levelGrid() -> [[Double]] {
+        var grid: [[Double]] = []
+        for w in 0..<cellsPerEdge {
+            var row: [Double] = []
+            for h in 0..<cellsPerEdge {
+                let j = linearCoordinates(fromX: w, fromY: h)
+                let level = (A[j] + B[j] == 0) ? 1.0 : B[j] / (A[j] + B[j])
+                row.append(level)
+            }
+            grid.append(row)
+        }
+        return grid
+    }
+
+    func seed(x: Int, y: Int) {
+        for dw in -seedRadius...seedRadius {
+            let w_target = (x + dw + cellsPerEdge) % cellsPerEdge
+            for dh in -seedRadius...seedRadius {
+                let h_target = (y + dh + cellsPerEdge) % cellsPerEdge
+                B[linearCoordinates(fromX: w_target, fromY: h_target)] = 1.0
+            }
+        }
+    }
+
+    func seedRandomly() {
+        for w in 0..<cellsPerEdge {
+            for h in 0..<cellsPerEdge {
+                if Int.random(in: 0..<3000) < 1 {
+                    seed(x: w, y: h)
+                }
+            }
+        }
+    }
+}

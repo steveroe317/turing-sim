@@ -31,7 +31,7 @@ struct ContentView: View {
         }
         .environment(simModel)
         .onReceive(timer) { _ in
-            simModel.evolve(count: 50)
+            simModel.evolve(for: 50)
         }
         .background(Color(.lightGray))
     }
