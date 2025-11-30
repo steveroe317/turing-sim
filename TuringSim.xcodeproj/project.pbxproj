@@ -64,7 +64,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				SimCell.swift,
-				SimEngine.swift,
 				SimEngineGraph.swift,
 				SimSnapshot.swift,
 			);
