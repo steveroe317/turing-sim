@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+@globalActor
+actor SimActor {
+    static let shared = SimActor()
+    
+    private init() {}
+}

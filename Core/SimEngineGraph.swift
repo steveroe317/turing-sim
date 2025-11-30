@@ -7,11 +7,13 @@
 
 import Foundation
 
-public class SimEngineGraph {
+@SimActor
+class SimEngineGraph {
     let cellsPerEdge = 201
     var totalCells = 201 * 201
     let seedRadius = 5
     var generation: Int = 0
+    private var isSimRunning: Bool = true
 
     // Gray-Scott model parameters
     let dA = 1.0
@@ -35,14 +37,31 @@ public class SimEngineGraph {
 
     init() {
         totalCells = cellsPerEdge * cellsPerEdge
-        A = Array(repeating: 1.0, count: totalCells)
-        B = Array(repeating: 0.0, count: totalCells)
         diffusedA = Array(repeating: 1.0, count: totalCells)
         diffusedB = Array(repeating: 0.0, count: totalCells)
         diffusionLinksA = Array(repeating: [], count: totalCells)
         diffusionLinksB = Array(repeating: [], count: totalCells)
         populateDiffusionLinks()
+        resetGraph()
+    }
+
+    func resetGraph() {
+        A = Array(repeating: 1.0, count: totalCells)
+        B = Array(repeating: 0.0, count: totalCells)
         seed(x: cellsPerEdge / 2, y: cellsPerEdge / 2)
+        generation = 0
+    }
+
+    func start() {
+        isSimRunning = true
+    }
+
+    func stop() {
+        isSimRunning = false
+    }
+    
+    func isRunning() -> Bool {
+        return isSimRunning
     }
 
     func planeCoordinates(fromLinear offset: Int) -> (x: Int, y: Int) {
@@ -135,20 +154,40 @@ public class SimEngineGraph {
         }
     }
 
-    func evolve(for count: Int = 1) -> (generation: Int, grid: [[Double]]) {
-        for _ in 0..<count {
-            diffuse()
-            for j in 0..<totalCells {
-                let a =
-                    A[j] + diffusedA[j] + f * (1.0 - A[j]) - r * A[j] * B[j]
-                    * B[j]
-                let b = B[j] + diffusedB[j] - k * B[j] + r * A[j] * B[j] * B[j]
-                A[j] = a
-                B[j] = b
+    func snapshots() -> AsyncStream<SimSnapshot> {
+        return AsyncStream { continuation in
+            Task {
+                while true {
+                    let snapshot = self.evolve(for: 50)
+                    continuation.yield(snapshot)
+                }
+                continuation.finish()
             }
-            generation += 1
         }
-        return (generation: generation, grid: levelGrid())
+    }
+
+    func evolve(for count: Int = 1) -> SimSnapshot {
+        if isSimRunning {
+            for _ in 0..<count {
+                diffuse()
+                for j in 0..<totalCells {
+                    let a =
+                        A[j] + diffusedA[j] + f * (1.0 - A[j]) - r * A[j] * B[j]
+                        * B[j]
+                    let b =
+                        B[j] + diffusedB[j] - k * B[j] + r * A[j] * B[j] * B[j]
+                    A[j] = a
+                    B[j] = b
+                }
+                generation += 1
+            }
+            print("SimEngineGraph: evolved \(generation)")
+        }
+        return SimSnapshot(
+            generation: generation,
+            cellsPerEdge: cellsPerEdge,
+            levelGrid: levelGrid()
+        )
     }
 
     func levelGrid() -> [[Double]] {
@@ -176,6 +215,7 @@ public class SimEngineGraph {
     }
 
     func seedRandomly() {
+        print("SimEngineGraph: seeding random")
         for w in 0..<cellsPerEdge {
             for h in 0..<cellsPerEdge {
                 if Int.random(in: 0..<3000) < 1 {
@@ -183,5 +223,6 @@ public class SimEngineGraph {
                 }
             }
         }
+        print("SimEngineGraph: seeded")
     }
 }

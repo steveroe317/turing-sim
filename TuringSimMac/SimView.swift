@@ -21,11 +21,13 @@ struct SimView: View {
             let minSpan = min(size.width, size.height)
             let cellSpan = minSpan / CGFloat(simModel.cellsPerEdge)
             let cellSize = CGSize(width: cellSpan, height: cellSpan)
+            let xbase = (size.width - minSpan) / 2.0
+            let ybase = (size.height - minSpan) / 2.0
 
             for w in 0..<simModel.cellsPerEdge {
                 for h in 0..<simModel.cellsPerEdge {
-                    let x = CGFloat(w) * cellSpan
-                    let y = CGFloat(h) * cellSpan
+                    let x = CGFloat(w) * cellSpan + xbase
+                    let y = CGFloat(h) * cellSpan + ybase
                     let cellBase = CGPoint(x: x, y: y)
                     let cellRect = CGRect(origin: cellBase, size: cellSize)
                     let path = Path(

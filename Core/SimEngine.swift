@@ -66,6 +66,7 @@ public class SimEngine {
         return max
     }
 
+
     func diffuseDeltaGrid() {
 
         for w in 0..<cellsPerEdge {

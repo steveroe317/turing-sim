@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct SimSnapshot: Sendable {
+    let generation: Int
+    let cellsPerEdge: Int
+    let levelGrid: [[Double]]
+}

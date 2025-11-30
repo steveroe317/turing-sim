@@ -6,12 +6,14 @@
 //
 
 import Foundation
-import TuringSim
+//import TuringSim
 
-print("Hello, World!")
+let generations = 1000
 
-let engine = SimEngine()
+print("Hello, World \(generations)!")
 
-let evolveResult = engine.evolve(for: 100)
+let engine = await SimEngineGraph()
+
+let evolveResult = await engine.evolve(for: generations)
 
 print("\(evolveResult.generation) Generations")

@@ -1,39 +1,53 @@
 //
 //  ContentView.swift
-//  TuringSim
+//  TuringSimApp
 //
-//  Created by Steve Roe on 11/22/25.
+//  Created by Steve Roe on 11/28/25.
 //
 
-import Combine
 import SwiftUI
 
 struct ContentView: View {
 
     @State private var simModel = SimModel()
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        VStack {
-            SimView()
-                .padding()
-            HStack {
-                Text("Hello, world!")
-                    .padding()
-                Button("Seed") {
-                    simModel.seedRandomly()
+        ZStack {
+            Color(red: 0.6, green: 0.3, blue: 0.2).edgesIgnoringSafeArea(.all)
+            VStack(alignment: .center) {
+                Text("Turing Pattern Evolution")
+                    .font(Font.largeTitle)
+                    .padding(8)
+                SimView()
+                    .padding(8)
+                HStack(alignment: .lastTextBaseline) {
+                    if simModel.isRunning() {
+                        Button("Pause") {
+                            simModel.pause()
+                        }
+                        .padding(8)
+                    } else {
+                        Button("Start") {
+                            simModel.start()
+                        }
+                        .padding(8)
+                    }
+                    Button("Seed") {
+                        simModel.seedRandomly()
+                    }
+                    .padding(8)
+                    Button("Reset") {
+                        simModel.reset()
+                    }
+                    .padding(8)
+                    Text("Generation \(simModel.generation)")
+                        .padding(8)
                 }
-                .padding()
-                Text("Generation \(simModel.generation)")
-                    .padding()
+                .padding(8)
             }
-            .padding()
+            .environment(simModel)
         }
-        .environment(simModel)
-        .onReceive(timer) { _ in
-            simModel.evolve(for: 50)
-        }
-        .background(Color(.lightGray))
+        .buttonStyle(.borderedProminent)
     }
 }
 
