@@ -8,7 +8,7 @@
 import Foundation
 
 @SimActor
-class SimEngineGraph {
+class SimEngine {
     let cellsPerEdge = 201
     var totalCells = 201 * 201
     let seedRadius = 5
