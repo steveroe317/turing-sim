@@ -25,7 +25,7 @@ final class SimModel {
 
     init() {
         simTask = Task {
-            let engine = await SimEngineGraph()
+            let engine = await SimEngine()
             while true {
                 isSimRunning = await engine.isRunning()
 

@@ -64,7 +64,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				SimCell.swift,
-				SimEngineGraph.swift,
+				SimEngine.swift,
 				SimSnapshot.swift,
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
@@ -88,7 +88,7 @@
 		2BF83E232EDA0D63009C977B /* Exceptions for "Core" folder in "TuringSimApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				SimEngineGraph.swift,
+				SimEngine.swift,
 				SimSnapshot.swift,
 			);
 			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
