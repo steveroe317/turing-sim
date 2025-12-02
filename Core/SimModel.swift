@@ -12,8 +12,14 @@ final class SimModel {
 
     var cellsPerEdge = 0
     var generation = 0
+    var generationRate = 0.0
     var frame = 0
-    let generationsPerFrame: Int = 1
+    let generationsPerFrame: Int = 50
+    let frameSamples = 10
+    private var frameTimes: [Double]
+    private var frameGenerations: [Int]
+    private var frameIndex = 0
+
     private var startRequested = false
     private var pauseRequested = false
     private var seedRequested = false
@@ -25,16 +31,27 @@ final class SimModel {
     private var simTask: Task<Void, Error>?
 
     init() {
+        frameTimes = Array(repeating: 0.0, count: frameSamples)
+        frameGenerations = Array(repeating: 0, count: frameSamples)
         simTask = Task {
             let engine = await SimEngine()
             while true {
                 isSimRunning = await engine.isRunning()
 
-                let snapshot = await engine.evolve(for: 50)
+                let start = Date.now
+
+                let snapshot = await engine.evolve(for: generationsPerFrame)
                 generation = snapshot.generation
                 cellsPerEdge = snapshot.cellsPerEdge
                 A = snapshot.A
                 B = snapshot.B
+
+                frameTimes[frameIndex] = Date.now.timeIntervalSince(start)
+                frameGenerations[frameIndex] = generationsPerFrame
+                generationRate =
+                    Double(frameGenerations.reduce(0, +))
+                    / frameTimes.reduce(0.0, +)
+                frameIndex = (frameIndex + 1) % frameSamples
 
                 if startRequested {
                     await engine.start()

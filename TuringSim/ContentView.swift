@@ -42,6 +42,8 @@ struct ContentView: View {
                     .padding(8)
                     Text("Generation \(simModel.generation)")
                         .padding(8)
+                    Text("Generation rate \(Int(simModel.generationRate.rounded()))")
+                        .padding(8)
                 }
                 .padding(8)
             }
