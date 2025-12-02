@@ -63,32 +63,20 @@
 		2B8346122ED38D9400227F52 /* Exceptions for "Core" folder in "TuringTool" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				SimActor.swift,
 				SimEngine.swift,
 				SimSnapshot.swift,
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
-		};
-		2B8346202ED6BB4C00227F52 /* Exceptions for "TuringSimMac" folder in "TuringTool" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SimActor.swift,
-			);
-			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
-		};
-		2BF83E1C2EDA0D40009C977B /* Exceptions for "TuringSimMac" folder in "TuringSimApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SimActor.swift,
-				SimModel.swift,
-				SimView.swift,
-			);
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
 		};
 		2BF83E232EDA0D63009C977B /* Exceptions for "Core" folder in "TuringSimApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				SimActor.swift,
 				SimEngine.swift,
+				SimModel.swift,
 				SimSnapshot.swift,
+				SimView.swift,
 			);
 			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
 		};
@@ -97,10 +85,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2B8345B02ED25A7000227F52 /* TuringSimMac */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2B8346202ED6BB4C00227F52 /* Exceptions for "TuringSimMac" folder in "TuringTool" target */,
-				2BF83E1C2EDA0D40009C977B /* Exceptions for "TuringSimMac" folder in "TuringSimApp" target */,
-			);
 			path = TuringSimMac;
 			sourceTree = "<group>";
 		};
