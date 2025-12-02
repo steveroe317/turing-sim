@@ -63,7 +63,6 @@
 		2B8346122ED38D9400227F52 /* Exceptions for "Core" folder in "TuringTool" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				SimCell.swift,
 				SimEngine.swift,
 				SimSnapshot.swift,
 			);
