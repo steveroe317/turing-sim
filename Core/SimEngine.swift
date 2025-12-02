@@ -186,22 +186,9 @@ class SimEngine {
         return SimSnapshot(
             generation: generation,
             cellsPerEdge: cellsPerEdge,
-            levelGrid: levelGrid()
+            A: A,
+            B: B
         )
-    }
-
-    func levelGrid() -> [[Double]] {
-        var grid: [[Double]] = []
-        for w in 0..<cellsPerEdge {
-            var row: [Double] = []
-            for h in 0..<cellsPerEdge {
-                let j = linearCoordinates(fromX: w, fromY: h)
-                let level = (A[j] + B[j] == 0) ? 1.0 : B[j] / (A[j] + B[j])
-                row.append(level)
-            }
-            grid.append(row)
-        }
-        return grid
     }
 
     func seed(x: Int, y: Int) {

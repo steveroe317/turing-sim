@@ -20,7 +20,8 @@ final class SimModel {
     private var resetRequested = false
     private var isSimRunning = true
 
-    private var levelGrid: [[Double]] = []
+    private var A: [Double] = []
+    private var B: [Double] = []
     private var simTask: Task<Void, Error>?
 
     init() {
@@ -32,7 +33,8 @@ final class SimModel {
                 let snapshot = await engine.evolve(for: 50)
                 generation = snapshot.generation
                 cellsPerEdge = snapshot.cellsPerEdge
-                levelGrid = snapshot.levelGrid
+                A = snapshot.A
+                B = snapshot.B
 
                 if startRequested {
                     await engine.start()
@@ -59,7 +61,8 @@ final class SimModel {
     }
 
     func level(w: Int, h: Int) -> Double {
-        levelGrid[w][h]
+        let j = w * cellsPerEdge + h
+        return (A[j] + B[j] == 0) ? 1.0 : B[j] / (A[j] + B[j])
     }
 
     func isRunning() -> Bool {
