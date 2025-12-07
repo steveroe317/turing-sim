@@ -69,6 +69,33 @@
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
 		};
+		2BA9E9C92EE1148D00940BA0 /* Exceptions for "Views" folder in "TuringSimApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CoreView.swift,
+				SimColors.swift,
+				SimControlView.swift,
+				SimExploreView.swift,
+				SimInformationView.swift,
+				SimParameterView.swift,
+				SimSelectView.swift,
+				SimView.swift,
+			);
+			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
+		};
+		2BA9E9CA2EE1149000940BA0 /* Exceptions for "Views" folder in "TuringTool" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CoreView.swift,
+				SimColors.swift,
+				SimControlView.swift,
+				SimExploreView.swift,
+				SimInformationView.swift,
+				SimParameterView.swift,
+				SimSelectView.swift,
+			);
+			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
+		};
 		2BF83E232EDA0D63009C977B /* Exceptions for "Core" folder in "TuringSimApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -76,7 +103,6 @@
 				SimEngine.swift,
 				SimModel.swift,
 				SimSnapshot.swift,
-				SimView.swift,
 			);
 			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
 		};
@@ -112,9 +138,18 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		2BF83DF12EDA0810009C977B /* TuringSim */ = {
+		2BA9E9C82EE1148400940BA0 /* Views */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TuringSim;
+			exceptions = (
+				2BA9E9CA2EE1149000940BA0 /* Exceptions for "Views" folder in "TuringTool" target */,
+				2BA9E9C92EE1148D00940BA0 /* Exceptions for "Views" folder in "TuringSimApp" target */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BF83DF12EDA0810009C977B /* TuringSimIos */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TuringSimIos;
 			sourceTree = "<group>";
 		};
 		2BF83DFF2EDA0811009C977B /* TuringSimAppTests */ = {
@@ -185,12 +220,13 @@
 		2B8345A52ED25A7000227F52 = {
 			isa = PBXGroup;
 			children = (
+				2BA9E9C82EE1148400940BA0 /* Views */,
 				2B8346102ED38D3900227F52 /* Core */,
 				2B8345B02ED25A7000227F52 /* TuringSimMac */,
 				2B8345BE2ED25A7200227F52 /* TuringSimTests */,
 				2B8345C82ED25A7200227F52 /* TuringSimUITests */,
 				2B8345E72ED37FF500227F52 /* TuringTool */,
-				2BF83DF12EDA0810009C977B /* TuringSim */,
+				2BF83DF12EDA0810009C977B /* TuringSimIos */,
 				2BF83DFF2EDA0811009C977B /* TuringSimAppTests */,
 				2BF83E092EDA0811009C977B /* TuringSimAppUITests */,
 				2B8345AF2ED25A7000227F52 /* Products */,
@@ -229,6 +265,7 @@
 			fileSystemSynchronizedGroups = (
 				2B8345B02ED25A7000227F52 /* TuringSimMac */,
 				2B8346102ED38D3900227F52 /* Core */,
+				2BA9E9C82EE1148400940BA0 /* Views */,
 			);
 			name = TuringSim;
 			packageProductDependencies = (
@@ -318,7 +355,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2BF83DF12EDA0810009C977B /* TuringSim */,
+				2BF83DF12EDA0810009C977B /* TuringSimIos */,
 			);
 			name = TuringSimApp;
 			packageProductDependencies = (
@@ -860,8 +897,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -893,8 +930,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

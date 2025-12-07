@@ -18,8 +18,8 @@ class SimEngine {
     // Gray-Scott model parameters
     let dA = 1.0
     let dB = 0.5
-    let f = 0.055
-    let k = 0.117
+    var f = 0.055
+    var k = 0.117
     let r = 1.0
 
     private var A = [Double]()
@@ -43,6 +43,14 @@ class SimEngine {
         diffusionLinksB = Array(repeating: [], count: totalCells)
         populateDiffusionLinks()
         resetGraph()
+    }
+    
+    func set_f(_ f: Double) {
+        self.f = f
+    }
+    
+    func set_k(_ k: Double) {
+        self.k = k
     }
 
     func resetGraph() {
@@ -181,7 +189,7 @@ class SimEngine {
                 }
                 generation += 1
             }
-            print("SimEngineGraph: evolved \(generation)")
+            //print("SimEngineGraph: evolved \(generation)")
         }
         return SimSnapshot(
             generation: generation,
@@ -205,7 +213,7 @@ class SimEngine {
         print("SimEngineGraph: seeding random")
         for w in 0..<cellsPerEdge {
             for h in 0..<cellsPerEdge {
-                if Int.random(in: 0..<3000) < 1 {
+                if Int.random(in: 0..<10000) < 1 {
                     seed(x: w, y: h)
                 }
             }
