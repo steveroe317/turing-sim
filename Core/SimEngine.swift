@@ -189,7 +189,6 @@ class SimEngine {
                 }
                 generation += 1
             }
-            //print("SimEngineGraph: evolved \(generation)")
         }
         return SimSnapshot(
             generation: generation,
