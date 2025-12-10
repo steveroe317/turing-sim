@@ -44,11 +44,11 @@ class SimEngine {
         populateDiffusionLinks()
         resetGraph()
     }
-    
+
     func set_f(_ f: Double) {
         self.f = f
     }
-    
+
     func set_k(_ k: Double) {
         self.k = k
     }
@@ -67,7 +67,7 @@ class SimEngine {
     func stop() {
         isSimRunning = false
     }
-    
+
     func isRunning() -> Bool {
         return isSimRunning
     }

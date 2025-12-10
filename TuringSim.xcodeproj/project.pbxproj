@@ -86,13 +86,7 @@
 		2BA9E9CA2EE1149000940BA0 /* Exceptions for "Views" folder in "TuringTool" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				CoreView.swift,
 				SimColors.swift,
-				SimControlView.swift,
-				SimExploreView.swift,
-				SimInformationView.swift,
-				SimParameterView.swift,
-				SimSelectView.swift,
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
 		};
