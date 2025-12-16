@@ -29,7 +29,7 @@ final class SimModel {
     private var isSimRunning = true
 
     var f = 0.055
-    var k = 0.117
+    var k = 0.062
     
     private var A: [Double] = []
     private var B: [Double] = []

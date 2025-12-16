@@ -19,7 +19,7 @@ class SimEngine {
     let dA = 1.0
     let dB = 0.5
     var f = 0.055
-    var k = 0.117
+    var k = 0.062
     let r = 1.0
 
     private var A = [Double]()
@@ -183,7 +183,7 @@ class SimEngine {
                         A[j] + diffusedA[j] + f * (1.0 - A[j]) - r * A[j] * B[j]
                         * B[j]
                     let b =
-                        B[j] + diffusedB[j] - k * B[j] + r * A[j] * B[j] * B[j]
+                        B[j] + diffusedB[j] - (f + k) * B[j] + r * A[j] * B[j] * B[j]
                     A[j] = a
                     B[j] = b
                 }

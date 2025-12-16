@@ -28,14 +28,14 @@ struct SimSelectView: View {
     }
 
     let parameterOptions: [ParameterOption] = [
-        ParameterOption(id: 1, F: 0.055, K: 0.117, comment: "Cerebellum"),
-        ParameterOption(id: 2, F: 0.034, K: 0.095, comment: "Strings"),
-        ParameterOption(id: 3, F: 0.034, K: 0.097, comment: "Splitting dots"),
-        ParameterOption(id: 4, F: 0.038, K: 0.099, comment: "Tiles"),
-        ParameterOption(id: 5, F: 0.042, K: 0.101, comment: "Lace"),
+        ParameterOption(id: 1, F: 0.055, K: 0.062, comment: "Cerebellum"),
+        ParameterOption(id: 2, F: 0.034, K: 0.061, comment: "Strings"),
+        ParameterOption(id: 3, F: 0.034, K: 0.063, comment: "Splitting dots"),
+        ParameterOption(id: 4, F: 0.038, K: 0.061, comment: "Tiles"),
+        ParameterOption(id: 5, F: 0.042, K: 0.059, comment: "Lace"),
     ]
 
-    @State private var currentSelection: ParameterOption? = ParameterOption(id: 1, F: 0.055, K: 0.117, comment: "Cerebellum")
+    @State private var currentSelection: ParameterOption? = ParameterOption(id: 1, F: 0.055, K: 0.062, comment: "Cerebellum")
 
     var body: some View {
         
