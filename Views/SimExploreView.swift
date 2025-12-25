@@ -16,19 +16,20 @@ struct SimExploreView: View {
         @Bindable var simModel = simModel
 
         VStack {
-            SimParameterView(label: "K", simParameter: $simModel.k)
-                .background(.white.opacity(0.5))
-                .cornerRadius(10)
+            TuringMapView()
             SimParameterView(label: "F", simParameter: $simModel.f)
                 .background(.white.opacity(0.5))
                 .cornerRadius(10)
-            Button("Close") {
+            SimParameterView(label: "K", simParameter: $simModel.k)
+                .background(.white.opacity(0.5))
+                .cornerRadius(10)
+           Button("Close") {
                 self.showExploreView.toggle()
             }
             .padding(.top, 10)
         }
         .padding(20)
-        .background(.black.opacity(0.5))
+        .background(.gray)
         .cornerRadius(25.0)
     }
 }

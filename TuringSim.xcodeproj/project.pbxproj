@@ -80,6 +80,7 @@
 				SimParameterView.swift,
 				SimSelectView.swift,
 				SimView.swift,
+				TuringMapView.swift,
 			);
 			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
 		};
