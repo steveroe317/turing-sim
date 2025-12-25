@@ -179,11 +179,13 @@ class SimEngine {
             for _ in 0..<count {
                 diffuse()
                 for j in 0..<totalCells {
-                    let a =
-                        A[j] + diffusedA[j] + f * (1.0 - A[j]) - r * A[j] * B[j]
-                        * B[j]
-                    let b =
-                        B[j] + diffusedB[j] - (f + k) * B[j] + r * A[j] * B[j] * B[j]
+                    let a_only_evolve = A[j] + diffusedA[j] + f * (1.0 - A[j])
+                    let b_only_evolve = B[j] + diffusedB[j] - (f + k) * B[j]
+                    let a_to_b_transfer = min(r * A[j] * B[j] * B[j], a_only_evolve)
+                    
+                    let a = a_only_evolve - a_to_b_transfer
+                    let b = max(b_only_evolve + a_to_b_transfer, 0.0)
+
                     A[j] = a
                     B[j] = b
                 }
