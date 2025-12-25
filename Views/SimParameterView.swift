@@ -16,12 +16,12 @@ struct SimParameterView: View {
             Stepper(
                 String(format: "\(label): %.3f", simParameter),
                 value: $simParameter,
-                in: 0.0...0.2,
+                in: 0.0...0.1,
                 step: 0.001
             )
             .frame(minWidth: 180)
             .padding(4)
-            Slider(value: $simParameter, in: 0.0...0.2, step: 0.001)
+            Slider(value: $simParameter, in: 0.0...0.1, step: 0.001)
                 .frame(minWidth: 120, maxWidth: 180)
                 .padding(4)
         }
