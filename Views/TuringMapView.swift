@@ -26,18 +26,10 @@ struct TuringMapView: View {
                 .opacity(0.3)
             Canvas { context, size in
                 let dotSize = CGSize(width: size.width / Double(steps), height: -size.height / Double(steps))
-//                let markerSize = CGSize(width: 2 * dotSize.width, height: 2 * dotSize.height)
                 let f = simModel.f
                 let k = simModel.k
                 let paramPoint = mapToCanvasPoint(f: f, k: k, size: size)
                 drawDot(at: paramPoint, size: dotSize, in: context)
-//                drawDot(at: mapToCanvasPoint(f: 0.00, k: 0.00, size: size), size: markerSize, in: context)
-//                drawDot(at: mapToCanvasPoint(f: 0.099, k: 0.00, size: size), size: markerSize, in: context)
-//                drawDot(at: mapToCanvasPoint(f: 0.00, k: 0.099, size: size), size: markerSize, in: context)
-//                drawDot(at: mapToCanvasPoint(f: 0.099, k: 0.099, size: size), size: markerSize, in: context)
-//                let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-//                let path = Circle().path(in: rect)
-//                context.fill(path, with: .color(.green.opacity(0.4)))
             }
         }
     }
