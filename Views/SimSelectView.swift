@@ -68,7 +68,7 @@ struct SimSelectView: View {
             .padding(.vertical, 10.0)
             HStack {
                 Spacer()
-                Button("Ok") {
+                Button("Confirm", role: .confirm) {
                     showSelection = false
                     if let currentSelection = currentSelection {
                         print("\(currentSelection.description())")
@@ -81,7 +81,7 @@ struct SimSelectView: View {
                     }
                 }
                 Spacer()
-                Button("Cancel") {
+                Button("Cancel", role: .cancel) {
                     showSelection = false
                     print("no selection")
                 }
