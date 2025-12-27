@@ -22,7 +22,6 @@ struct ContentView: View {
         }
         .environment(simModel)
         .buttonStyle(SimButtonStyle())
-        //.buttonStyle(Color("ButtonBackground"))
     }
 }
 
