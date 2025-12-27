@@ -73,6 +73,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				CoreView.swift,
+				SimButtonStyle.swift,
 				SimColors.swift,
 				SimControlView.swift,
 				SimExploreView.swift,
