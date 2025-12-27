@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TuringMapView: View {
-    @Environment(SimModel.self) var simModel
+    @Binding var f: Double
+    @Binding var k: Double
     
     let span = 0.1
     let steps = 100
@@ -26,8 +27,6 @@ struct TuringMapView: View {
                 .opacity(0.3)
             Canvas { context, size in
                 let dotSize = CGSize(width: size.width / Double(steps), height: -size.height / Double(steps))
-                let f = simModel.f
-                let k = simModel.k
                 let paramPoint = mapToCanvasPoint(f: f, k: k, size: size)
                 drawDot(at: paramPoint, size: dotSize, in: context)
             }
@@ -58,5 +57,7 @@ struct TuringMapView: View {
 }
 
 #Preview {
-    TuringMapView()
+    @Previewable @State var f: Double = 0.05
+    @Previewable @State var k: Double = 0.05
+    TuringMapView(f: $f, k: $k)
 }
