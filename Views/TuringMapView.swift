@@ -26,9 +26,9 @@ struct TuringMapView: View {
                 .frame(width: 300, height: 300)
                 .opacity(0.3)
             Canvas { context, size in
-                let dotSize = CGSize(width: size.width / Double(steps), height: -size.height / Double(steps))
+                let cellEdge = min(size.width, size.height) / Double(steps)
                 let paramPoint = mapToCanvasPoint(f: f, k: k, size: size)
-                drawDot(at: paramPoint, size: dotSize, in: context)
+                drawScopeSight(at: paramPoint, cellEdge: cellEdge, in: context)
             }
         }
     }
@@ -49,10 +49,43 @@ struct TuringMapView: View {
         return CGPoint(x: x, y: y)
     }
     
-    func drawDot(at base: CGPoint, size: CGSize, in context: GraphicsContext) {
-        let rect = CGRect(origin: base, size: size)
-        let path = Circle().path(in: rect)
-        context.fill(path, with: .color(.black))
+    func drawScopeSight(at base: CGPoint, cellEdge: Double, in context: GraphicsContext) {
+        let ringRadius = 8.0
+        
+        let center = CGPoint(x: base.x + cellEdge / 2, y: base.y + cellEdge / 2)
+        
+        let circleBounds = CGRect(
+            x: center.x - ringRadius,
+            y: center.y - ringRadius,
+            width: 2 * ringRadius,
+            height: 2 * ringRadius)
+        context.stroke(
+            Circle()
+                .path(in: circleBounds),
+            with: .color(.black))
+        
+        let innerLineRadius: CGFloat = 2.0
+        let outerLineRadius: CGFloat = 12.0
+        
+        var path = Path()
+        path.move(to: CGPoint(x: center.x, y: center.y + innerLineRadius))
+        path.addLine(to: CGPoint(x: center.x, y: center.y + outerLineRadius))
+        context.stroke(path, with: .color(.black))
+        
+        path = Path()
+        path.move(to: CGPoint(x: center.x, y: center.y - innerLineRadius))
+        path.addLine(to: CGPoint(x: center.x, y: center.y - outerLineRadius))
+        context.stroke(path, with: .color(.black))
+
+        path = Path()
+        path.move(to: CGPoint(x: center.x + innerLineRadius, y: center.y))
+        path.addLine(to: CGPoint(x: center.x + outerLineRadius, y: center.y))
+        context.stroke(path, with: .color(.black))
+
+        path = Path()
+        path.move(to: CGPoint(x: center.x - innerLineRadius, y: center.y))
+        path.addLine(to: CGPoint(x: center.x - outerLineRadius, y: center.y))
+        context.stroke(path, with: .color(.black))
     }
 }
 
