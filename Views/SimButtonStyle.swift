@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-struct SimButtonStyle: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct SimButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(8)
+            .background(Color("ButtonBackground"))
+            .clipShape(Capsule())
     }
 }
 
 #Preview {
-    SimButtonStyle()
+    Button("Hello") {
+        
+    }.buttonStyle(SimButtonStyle());
 }

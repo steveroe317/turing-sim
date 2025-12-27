@@ -21,7 +21,8 @@ struct ContentView: View {
 
         }
         .environment(simModel)
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(SimButtonStyle())
+        //.buttonStyle(Color("ButtonBackground"))
     }
 }
 
