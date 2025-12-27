@@ -56,8 +56,8 @@ struct SimControlView: View {
                     .padding(4)
                 }
 
-                Button("Poke") {
-                    simModel.seedRandomly()
+                Button("Reset", role: .destructive) {
+                    simModel.reset()
                 }
                 .background(
                     GeometryReader { geometry in
@@ -70,8 +70,8 @@ struct SimControlView: View {
                 .frame(width: buttonMaxWidth)  // Apply the determined max width
                 .padding(4)
 
-                Button("Reset") {
-                    simModel.reset()
+                Button("Seed") {
+                    simModel.seedRandomly()
                 }
                 .background(
                     GeometryReader { geometry in
