@@ -41,7 +41,7 @@ struct SimExploreView: View {
         .padding(20)
         .background(.gray)
         .cornerRadius(25.0)
-        .onAppear {
+        .task {
             f = simModel.f
             k = simModel.k
         }
