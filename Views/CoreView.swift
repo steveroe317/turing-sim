@@ -16,40 +16,53 @@ struct CoreView: View {
     var body: some View {
         @Bindable var simModel = simModel
 
-        ZStack(alignment: .center) {
-            VStack(alignment: .center) {
-                Text("Turing Patterns")
-                    .font(Font.largeTitle)
+        VStack(alignment: .center) {
+            Text("Turing Patterns")
+                .font(Font.largeTitle)
+            ZStack(alignment: .center) {
                 SimView()
-                ViewThatFits {
-                    HStack(alignment: .lastTextBaseline) {
-                        SimControlView(
-                            showSelectView: $showSelectView,
-                            showExploreView: $showExploreView
-                        )
-                        .padding(4)
-                        SimInformationView()
-                            .padding(4)
-                    }
-                    VStack {
-                        SimControlView(
-                            showSelectView: $showSelectView,
-                            showExploreView: $showExploreView
-                        )
-                        .padding(4)
-                        SimInformationView()
-                            .padding(4)
+                if showSelectView {
+                    SimSelectView(showSelection: $showSelectView)
+                        .frame(maxWidth: 380, maxHeight: 340)
+                } else if showExploreView {
+                    ViewThatFits {
+                        SimExploreView(mapScale: 800, showExploreView: $showExploreView)
+                            .aspectRatio(1.0, contentMode: .fit)
+                        SimExploreView(mapScale: 800, showExploreView: $showExploreView)
+                            .aspectRatio(1.0, contentMode: .fit)
+                        SimExploreView(mapScale: 700, showExploreView: $showExploreView)
+                            .aspectRatio(1.0, contentMode: .fit)
+                        SimExploreView(mapScale: 600, showExploreView: $showExploreView)
+                            .aspectRatio(1.0, contentMode: .fit)
+                        SimExploreView(mapScale: 500, showExploreView: $showExploreView)
+                            .aspectRatio(1.0, contentMode: .fit)
+                        SimExploreView(mapScale: 400, showExploreView: $showExploreView)
+                            .aspectRatio(1.0, contentMode: .fit)
+                        SimExploreView(mapScale: 300, showExploreView: $showExploreView)
+                            .aspectRatio(1.0, contentMode: .fit)
                     }
                 }
             }
-            .padding(4)
-            if showSelectView {
-                SimSelectView(showSelection: $showSelectView)
-                    .frame(maxWidth: 380, maxHeight: 340)
-            } else if showExploreView {
-                Spacer()
-                SimExploreView(showExploreView: $showExploreView)
-                    .frame(maxWidth: 380, maxHeight: 240)
+            .padding(20)
+            ViewThatFits {
+                HStack(alignment: .lastTextBaseline) {
+                    SimControlView(
+                        showSelectView: $showSelectView,
+                        showExploreView: $showExploreView
+                    )
+                    .padding(4)
+                    SimInformationView()
+                        .padding(4)
+                }
+                VStack {
+                    SimControlView(
+                        showSelectView: $showSelectView,
+                        showExploreView: $showExploreView
+                    )
+                    .padding(4)
+                    SimInformationView()
+                        .padding(4)
+                }
             }
         }
     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SimExploreView: View {
+    let mapScale: CGFloat
     @Environment(SimModel.self) var simModel
 
     @Binding var showExploreView: Bool
@@ -19,12 +20,14 @@ struct SimExploreView: View {
         @Bindable var simModel = simModel
 
         VStack {
-            TuringMapView(f: $f, k: $k)
+            TuringMapView(scale: mapScale, f: $f, k: $k)
             SimParameterView(label: "F", simParameter: $f)
                 .background(.white.opacity(0.5))
+                .frame(maxWidth: 380)
                 .cornerRadius(10)
             SimParameterView(label: "K", simParameter: $k)
                 .background(.white.opacity(0.5))
+                .frame(maxWidth: 380)
                 .cornerRadius(10)
             HStack {
                 Button("Confirm", role: .confirm) {
@@ -51,5 +54,5 @@ struct SimExploreView: View {
 
 #Preview {
     @Previewable @State var show: Bool = true
-    SimExploreView(showExploreView: $show).environment(SimModel())
+    SimExploreView(mapScale: 300, showExploreView: $show).environment(SimModel())
 }

@@ -18,7 +18,7 @@ struct SimView: View {
 
     var body: some View {
         Canvas { context, size in
-            let minSpan = 0.9 * min(size.width, size.height)
+            let minSpan = min(size.width, size.height)
             let cellSpan = minSpan / CGFloat(simModel.cellsPerEdge)
             let cellSize = CGSize(width: cellSpan, height: cellSpan)
             let xbase = (size.width - minSpan) / 2.0

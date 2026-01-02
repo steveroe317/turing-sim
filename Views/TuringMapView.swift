@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TuringMapView: View {
+    let scale: CGFloat
     @Binding var f: Double
     @Binding var k: Double
     
@@ -19,41 +20,52 @@ struct TuringMapView: View {
             Image("turing-space-1500x1500")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 300, height: 300)
+                .frame(width: scale, height: scale)
             Image("TuringMapMask_100x100_v1")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 300, height: 300)
+                .frame(width: scale, height: scale)
                 .opacity(0.3)
             Canvas { context, size in
-                let cellEdge = min(size.width, size.height) / Double(steps)
-                let paramPoint = mapToCanvasPoint(f: f, k: k, size: size)
-                drawScopeSight(at: paramPoint, cellEdge: cellEdge, in: context)
+                let paramPoint = mapParamsToCanvasPoint(f: f, k: k, size: size)
+                drawScopeSight(at: paramPoint, in: context)
             }
+        }
+        .frame(width: scale, height: scale)
+        .onTapGesture {
+            location in
+            print(location)
+            (f, k) = mapCanvasPointToParams(x: location.x, y: location.y)
         }
     }
     
-    func clamp_to_span(_ value: Double) -> Double {
-        max(0.0, min(value, span))
+    func clamp(to max_value: Double, _ value: Double) -> Double {
+        max(0.0, min(value, max_value))
     }
     
-    func mapToCanvasPoint(f: Double, k: Double, size: CGSize) -> CGPoint {
+    func mapParamsToCanvasPoint(f: Double, k: Double, size: CGSize) -> CGPoint {
         let edge = min(size.width, size.height)
-        var x = edge * (clamp_to_span(k) / span)
-        var y = edge - edge * (clamp_to_span(f) / span)
+        var x = edge * (clamp(to: span, k) / span)
+        var y = edge - edge * (clamp(to: span, f) / span)
         if size.width < size.height {
             y += (size.height - size.width) / 2
         } else {
             x += (size.width - size.height) / 2
         }
+        print(x, y)
         return CGPoint(x: x, y: y)
     }
     
-    func drawScopeSight(at base: CGPoint, cellEdge: Double, in context: GraphicsContext) {
+    func mapCanvasPointToParams(x: CGFloat, y: CGFloat) -> (f: Double, k: Double) {
+            let map_x = clamp(to: scale, x)
+            let k = span * map_x / scale
+            let map_y = clamp(to: scale, y)
+            let f = span * (scale - map_y) / scale
+        return (f: Double(f), k: Double(k))
+    }
+    
+    func drawScopeSight(at center: CGPoint, in context: GraphicsContext) {
         let ringRadius = 8.0
-        
-        let center = CGPoint(x: base.x + cellEdge / 2, y: base.y + cellEdge / 2)
-        
         let circleBounds = CGRect(
             x: center.x - ringRadius,
             y: center.y - ringRadius,
@@ -92,5 +104,5 @@ struct TuringMapView: View {
 #Preview {
     @Previewable @State var f: Double = 0.05
     @Previewable @State var k: Double = 0.05
-    TuringMapView(f: $f, k: $k)
+    TuringMapView(scale: 300, f: $f, k: $k)
 }
