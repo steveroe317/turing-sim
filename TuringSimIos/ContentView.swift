@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var simModel = SimModel()
-
     var body: some View {
         ZStack {
             Color(red: 0.6, green: 0.3, blue: 0.2).edgesIgnoringSafeArea(.all)
@@ -20,7 +18,6 @@ struct ContentView: View {
             }
 
         }
-        .environment(simModel)
         .buttonStyle(SimButtonStyle())
     }
 }

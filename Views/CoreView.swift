@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct CoreView: View {
-    @Environment(SimModel.self) var simModel
 
+    @State private var simModel = SimModel()
     @State private var showSelectView: Bool = false
     @State private var showExploreView: Bool = false
 
     var body: some View {
-        @Bindable var simModel = simModel
-
         VStack(alignment: .center) {
             Text("Turing Patterns")
                 .font(Font.largeTitle)
@@ -65,6 +63,7 @@ struct CoreView: View {
                 }
             }
         }
+        .environment(simModel)
     }
 }
 
