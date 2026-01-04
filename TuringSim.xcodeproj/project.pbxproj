@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2BB8A0532F0B0EE3006FDA5D /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2B8345BC2ED25A7200227F52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -54,6 +58,7 @@
 		2B8345BB2ED25A7200227F52 /* TuringSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345C52ED25A7200227F52 /* TuringSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345E62ED37FF500227F52 /* TuringTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TuringTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BB8A0532F0B0EE3006FDA5D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2BF83DF02EDA0810009C977B /* TuringSimApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSimApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF83DFC2EDA0811009C977B /* TuringSimAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF83E062EDA0811009C977B /* TuringSimAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +221,7 @@
 		2B8345A52ED25A7000227F52 = {
 			isa = PBXGroup;
 			children = (
+				2BB8A0532F0B0EE3006FDA5D /* .gitignore */,
 				2BA9E9C82EE1148400940BA0 /* Views */,
 				2B8346102ED38D3900227F52 /* Core */,
 				2B8345B02ED25A7000227F52 /* TuringSimMac */,
@@ -473,6 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
