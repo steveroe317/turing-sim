@@ -150,7 +150,7 @@ struct SimControlView: View {
                         .padding(4)
                     }
 
-                    Button("Poke") {
+                    Button("Seed") {
                         simModel.seedRandomly()
                     }
                     .background(
