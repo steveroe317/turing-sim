@@ -11,39 +11,36 @@ struct SimSelectView: View {
     @Binding var showSelection: Bool
 
     @Environment(SimModel.self) var simModel
+    @Environment(TuringMapLabels.self) var mapLabels
     @Environment(\.colorScheme) var colorScheme
 
-    struct ParameterOption: Identifiable, Hashable {
+    struct TuringPointItem: Identifiable, Hashable {
         let id: Int
         let F: Double
         let K: Double
-        let comment: String
 
-        func description() -> String {
-            if F != 0.0 && K != 0.0 {
-                return "\(comment) F: \(F), K: \(K)"
-            }
-            return comment
+        func label(f: Double, k: Double, mapLabels: TuringMapLabels) -> String {
+            return mapLabels.getLabel(forPoint: TuringMapPoint(f: f, k: k)) ?? ""
         }
     }
 
-    let parameterOptions: [ParameterOption] = [
-        ParameterOption(id: 1, F: 0.055, K: 0.062, comment: "Cerebellum"),
-        ParameterOption(id: 2, F: 0.042, K: 0.059, comment: "Lace"),
-        ParameterOption(id: 3, F: 0.038, K: 0.061, comment: "Tiles"),
-        ParameterOption(id: 4, F: 0.034, K: 0.061, comment: "Strings"),
-        ParameterOption(id: 5, F: 0.034, K: 0.063, comment: "Mitosis"),
-        ParameterOption(id: 6, F: 0.026, K: 0.052, comment: "Mandala"),
-        ParameterOption(id: 7, F: 0.022, K: 0.050, comment: "Shimmer"),
-        ParameterOption(id: 8, F: 0.026, K: 0.056, comment: "Evolution"),
-        ParameterOption(id: 9, F: 0.022, K: 0.048, comment: "Tunnel"),
-        ParameterOption(id: 10, F: 0.016, K: 0.048, comment: "Reflections"),
-        ParameterOption(id: 11, F: 0.014, K: 0.040, comment: "Fog"),
-        ParameterOption(id: 12, F: 0.014, K: 0.050, comment: "Waves"),
-        ParameterOption(id: 13, F: 0.014, K: 0.053, comment: "Wavelets"),
+    let parameterOptions: [TuringPointItem] = [
+        TuringPointItem(id: 1, F: 0.055, K: 0.062),
+        TuringPointItem(id: 2, F: 0.042, K: 0.059),
+        TuringPointItem(id: 3, F: 0.038, K: 0.061),
+        TuringPointItem(id: 4, F: 0.034, K: 0.061),
+        TuringPointItem(id: 5, F: 0.034, K: 0.063),
+        TuringPointItem(id: 6, F: 0.026, K: 0.052),
+        TuringPointItem(id: 7, F: 0.022, K: 0.050,),
+        TuringPointItem(id: 8, F: 0.026, K: 0.056),
+        TuringPointItem(id: 9, F: 0.022, K: 0.048),
+        TuringPointItem(id: 10, F: 0.016, K: 0.048),
+        TuringPointItem(id: 11, F: 0.014, K: 0.040),
+        TuringPointItem(id: 12, F: 0.014, K: 0.050),
+        TuringPointItem(id: 13, F: 0.014, K: 0.053),
     ]
 
-    @State private var currentSelection: ParameterOption? = ParameterOption(id: 1, F: 0.055, K: 0.062, comment: "Cerebellum")
+    @State private var currentSelection: TuringPointItem? = TuringPointItem(id: 1, F: 0.055, K: 0.062)
 
     var body: some View {
         
@@ -52,8 +49,8 @@ struct SimSelectView: View {
                 .bold(true)
             Picker("Select option", selection: $currentSelection) {
                 ForEach(parameterOptions) { option in
-                    Text(option.description()).tag(
-                        option as ParameterOption?
+                    Text(option.label(f: option.F, k: option.K, mapLabels: mapLabels)).tag(
+                        option as TuringPointItem?
                     )
                 }
             }
@@ -71,7 +68,6 @@ struct SimSelectView: View {
                 Button("Confirm", role: .confirm) {
                     showSelection = false
                     if let currentSelection = currentSelection {
-                        print("\(currentSelection.description())")
                         if currentSelection.F != 0
                             && currentSelection.F != 0
                         {

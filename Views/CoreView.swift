@@ -10,6 +10,7 @@ import SwiftUI
 struct CoreView: View {
 
     @State private var simModel = SimModel()
+    @State private var mapLabels = TuringMapLabels()
     @State private var showSelectView: Bool = false
     @State private var showExploreView: Bool = false
 
@@ -64,6 +65,7 @@ struct CoreView: View {
             }
         }
         .environment(simModel)
+        .environment(mapLabels)
     }
 }
 

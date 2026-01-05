@@ -71,6 +71,7 @@
 				SimActor.swift,
 				SimEngine.swift,
 				SimSnapshot.swift,
+				TuringMapPoint.swift,
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
 		};
@@ -97,6 +98,20 @@
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
 		};
+		2BB8A0A82F0B1156006FDA5D /* Exceptions for "Data" folder in "TuringTool" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TuringMapLabels.swift,
+			);
+			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
+		};
+		2BB8A0A92F0B1156006FDA5D /* Exceptions for "Data" folder in "TuringSimApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TuringMapLabels.swift,
+			);
+			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
+		};
 		2BF83E232EDA0D63009C977B /* Exceptions for "Core" folder in "TuringSimApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -104,6 +119,7 @@
 				SimEngine.swift,
 				SimModel.swift,
 				SimSnapshot.swift,
+				TuringMapPoint.swift,
 			);
 			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
 		};
@@ -146,6 +162,15 @@
 				2BA9E9C92EE1148D00940BA0 /* Exceptions for "Views" folder in "TuringSimApp" target */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2BB8A0A32F0B1112006FDA5D /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2BB8A0A82F0B1156006FDA5D /* Exceptions for "Data" folder in "TuringTool" target */,
+				2BB8A0A92F0B1156006FDA5D /* Exceptions for "Data" folder in "TuringSimApp" target */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		2BF83DF12EDA0810009C977B /* TuringSimIos */ = {
@@ -221,6 +246,7 @@
 		2B8345A52ED25A7000227F52 = {
 			isa = PBXGroup;
 			children = (
+				2BB8A0A32F0B1112006FDA5D /* Data */,
 				2BB8A0532F0B0EE3006FDA5D /* .gitignore */,
 				2BA9E9C82EE1148400940BA0 /* Views */,
 				2B8346102ED38D3900227F52 /* Core */,
@@ -268,6 +294,7 @@
 				2B8345B02ED25A7000227F52 /* TuringSimMac */,
 				2B8346102ED38D3900227F52 /* Core */,
 				2BA9E9C82EE1148400940BA0 /* Views */,
+				2BB8A0A32F0B1112006FDA5D /* Data */,
 			);
 			name = TuringSim;
 			packageProductDependencies = (
