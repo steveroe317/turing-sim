@@ -34,9 +34,15 @@ struct TuringMapView: View {
         .frame(width: scale, height: scale)
         .onTapGesture {
             location in
-            print(location)
             (f, k) = mapCanvasPointToParams(x: location.x, y: location.y)
         }
+        .gesture(
+            DragGesture(minimumDistance: 10)
+                .onChanged {
+                    value in
+                    (f, k) = mapCanvasPointToParams(x: value.location.x, y: value.location.y)
+                }
+        )
     }
     
     func clamp(to max_value: Double, _ value: Double) -> Double {
