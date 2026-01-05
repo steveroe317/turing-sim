@@ -11,9 +11,11 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-        CoreView()
-            .background(Color(red: 0.660, green: 0.385, blue: 0.270))
-            .buttonStyle(SimButtonStyle())
+        ZStack {
+            (Color(red: 0.660, green: 0.385, blue: 0.270))
+            CoreView()
+                .buttonStyle(SimButtonStyle())
+        }
     }
 }
 

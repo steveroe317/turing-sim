@@ -41,6 +41,7 @@ struct SimView: View {
                 }
             }
         }
+        .aspectRatio(1.0, contentMode: .fit)
     }
 }
 
