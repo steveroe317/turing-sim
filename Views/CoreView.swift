@@ -18,6 +18,9 @@ struct CoreView: View {
         VStack(alignment: .center) {
             Text("Turing Patterns")
                 .font(Font.largeTitle)
+                .padding(4)
+            SimInformationView()
+                .padding(4)
             ZStack(alignment: .center) {
                 SimView()
                 if showSelectView {
@@ -42,7 +45,7 @@ struct CoreView: View {
                     }
                 }
             }
-            .padding(20)
+            .padding(4)
             ViewThatFits {
                 HStack(alignment: .lastTextBaseline) {
                     SimControlView(
@@ -50,8 +53,6 @@ struct CoreView: View {
                         showExploreView: $showExploreView
                     )
                     .padding(4)
-                    SimInformationView()
-                        .padding(4)
                 }
                 VStack {
                     SimControlView(
@@ -59,8 +60,6 @@ struct CoreView: View {
                         showExploreView: $showExploreView
                     )
                     .padding(4)
-                    SimInformationView()
-                        .padding(4)
                 }
             }
         }

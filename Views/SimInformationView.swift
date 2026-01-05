@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SimInformationView: View {
     @Environment(SimModel.self) var simModel
+    @Environment(TuringMapLabels.self) var mapLabels
 
     var body: some View {
-        let minInfoWidth = CGFloat(160)
-        let minRateWidth = CGFloat(80)
+        let minInfoWidth = CGFloat(120)
         ViewThatFits {
             HStack(alignment: .lastTextBaseline) {
                 Text(
@@ -24,11 +24,14 @@ struct SimInformationView: View {
                 )
                 .frame(minWidth: minInfoWidth, alignment: .leading)
                 .padding(4)
+                Text(mapLabels.getLabel(forPoint: .init(f: simModel.f, k: simModel.k)) ?? "")
+                    .frame(minWidth: minInfoWidth, alignment: .leading)
+                    .padding(4)
                 Text("Generation \(simModel.generation)")
                     .frame(minWidth: minInfoWidth, alignment: .leading)
                     .padding(4)
-                Text("Rate \(Int(simModel.generationRate.rounded()))")
-                    .frame(minWidth: minRateWidth, alignment: .leading)
+                Text("\(Int(simModel.generationRate.rounded()))/sec")
+                    .frame(minWidth: minInfoWidth, alignment: .trailing)
                     .padding(4)
             }
             VStack {
@@ -42,13 +45,18 @@ struct SimInformationView: View {
                     )
                     .frame(minWidth: minInfoWidth, alignment: .leading)
                     .padding(4)
+                    Text(mapLabels.getLabel(forPoint: .init(f: simModel.f, k: simModel.k)) ?? "")
+                        .frame(minWidth: minInfoWidth, alignment: .trailing)
+                        .padding(4)
+                }
+                HStack(alignment: .lastTextBaseline) {
                     Text("Generation \(simModel.generation)")
                         .frame(minWidth: minInfoWidth, alignment: .leading)
                         .padding(4)
+                    Text("\(Int(simModel.generationRate.rounded()))/sec")
+                        .frame(minWidth: minInfoWidth, alignment: .trailing)
+                        .padding(4)
                 }
-                Text("Rate \(Int(simModel.generationRate.rounded()))")
-                    .frame(minWidth: minRateWidth, alignment: .leading)
-                    .padding(4)
             }
             VStack {
                 Text(
@@ -63,10 +71,14 @@ struct SimInformationView: View {
                 Text("Generation \(simModel.generation)")
                     .frame(minWidth: minInfoWidth, alignment: .leading)
                     .padding(4)
-                Text("Rate \(Int(simModel.generationRate.rounded()))")
-                    .frame(minWidth: minRateWidth, alignment: .leading)
+                Text(mapLabels.getLabel(forPoint: .init(f: simModel.f, k: simModel.k)) ?? "")
+                    .frame(minWidth: minInfoWidth, alignment: .leading)
+                    .padding(4)
+                Text("\(Int(simModel.generationRate.rounded()))/sec")
+                    .frame(minWidth: minInfoWidth, alignment: .leading)
                     .padding(4)
             }
+
         }
     }
 }
