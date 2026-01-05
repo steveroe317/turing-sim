@@ -25,7 +25,7 @@ struct SimInformationView: View {
                 .frame(minWidth: minInfoWidth, alignment: .leading)
                 .padding(4)
                 Text(mapLabels.getLabel(forPoint: .init(f: simModel.f, k: simModel.k)) ?? "")
-                    .frame(minWidth: minInfoWidth, alignment: .leading)
+                    .frame(minWidth: minInfoWidth, alignment: .center)
                     .padding(4)
                 Text("Generation \(simModel.generation)")
                     .frame(minWidth: minInfoWidth, alignment: .leading)
