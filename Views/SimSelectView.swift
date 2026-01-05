@@ -86,6 +86,10 @@ struct SimSelectView: View {
         .padding(20.0)
         .background(.black.opacity(0.5))
         .cornerRadius(25.0)
+        .task {
+            let base = TuringMapPoint(f: simModel.f, k: simModel.k)
+            currentSelection = menuItems.min(by: { base.distance(to: $0.point) < base.distance(to: $1.point) })
+        }
     }
 }
 
