@@ -16,31 +16,30 @@ struct SimSelectView: View {
 
     struct TuringPointItem: Identifiable, Hashable {
         let id: Int
-        let F: Double
-        let K: Double
+        let point: TuringMapPoint
 
-        func label(f: Double, k: Double, mapLabels: TuringMapLabels) -> String {
-            return mapLabels.getLabel(forPoint: TuringMapPoint(f: f, k: k)) ?? ""
+        func label(point: TuringMapPoint, mapLabels: TuringMapLabels) -> String {
+            return mapLabels.getLabel(forPoint: point) ?? ""
         }
     }
 
-    let parameterOptions: [TuringPointItem] = [
-        TuringPointItem(id: 1, F: 0.055, K: 0.062),
-        TuringPointItem(id: 2, F: 0.042, K: 0.059),
-        TuringPointItem(id: 3, F: 0.038, K: 0.061),
-        TuringPointItem(id: 4, F: 0.034, K: 0.061),
-        TuringPointItem(id: 5, F: 0.034, K: 0.063),
-        TuringPointItem(id: 6, F: 0.026, K: 0.052),
-        TuringPointItem(id: 7, F: 0.022, K: 0.050,),
-        TuringPointItem(id: 8, F: 0.026, K: 0.056),
-        TuringPointItem(id: 9, F: 0.022, K: 0.048),
-        TuringPointItem(id: 10, F: 0.016, K: 0.048),
-        TuringPointItem(id: 11, F: 0.014, K: 0.040),
-        TuringPointItem(id: 12, F: 0.014, K: 0.050),
-        TuringPointItem(id: 13, F: 0.014, K: 0.053),
+    let menuItems: [TuringPointItem] = [
+        TuringPointItem(id: 1, point: TuringMapPoint(f: 0.055, k: 0.062)),
+        TuringPointItem(id: 2, point: TuringMapPoint(f: 0.042, k: 0.059)),
+        TuringPointItem(id: 3, point: TuringMapPoint(f: 0.038, k: 0.061)),
+        TuringPointItem(id: 4, point: TuringMapPoint(f: 0.034, k: 0.061)),
+        TuringPointItem(id: 5, point: TuringMapPoint(f: 0.034, k: 0.063)),
+        TuringPointItem(id: 6, point: TuringMapPoint(f: 0.026, k: 0.052)),
+        TuringPointItem(id: 7, point: TuringMapPoint(f: 0.022, k: 0.050)),
+        TuringPointItem(id: 8, point: TuringMapPoint(f: 0.026, k: 0.056)),
+        TuringPointItem(id: 9, point: TuringMapPoint(f: 0.022, k: 0.048)),
+        TuringPointItem(id: 10, point: TuringMapPoint(f: 0.016, k: 0.048)),
+        TuringPointItem(id: 11, point: TuringMapPoint(f: 0.014, k: 0.040)),
+        TuringPointItem(id: 12, point: TuringMapPoint(f: 0.014, k: 0.050)),
+        TuringPointItem(id: 13, point: TuringMapPoint(f: 0.014, k: 0.053)),
     ]
 
-    @State private var currentSelection: TuringPointItem? = TuringPointItem(id: 1, F: 0.055, K: 0.062)
+    @State private var currentSelection: TuringPointItem? = TuringPointItem(id: 1, point: TuringMapPoint(f: 0.055, k: 0.062))
 
     var body: some View {
         
@@ -48,8 +47,8 @@ struct SimSelectView: View {
             Text("Select Simulation Parameters")
                 .bold(true)
             Picker("Select option", selection: $currentSelection) {
-                ForEach(parameterOptions) { option in
-                    Text(option.label(f: option.F, k: option.K, mapLabels: mapLabels)).tag(
+                ForEach(menuItems) { option in
+                    Text(option.label(point: option.point, mapLabels: mapLabels)).tag(
                         option as TuringPointItem?
                     )
                 }
@@ -68,11 +67,11 @@ struct SimSelectView: View {
                 Button("Confirm", role: .confirm) {
                     showSelection = false
                     if let currentSelection = currentSelection {
-                        if currentSelection.F != 0
-                            && currentSelection.F != 0
+                        if currentSelection.point.f != 0
+                            && currentSelection.point.k != 0
                         {
-                            simModel.f = currentSelection.F
-                            simModel.k = currentSelection.K
+                            simModel.f = currentSelection.point.f
+                            simModel.k = currentSelection.point.k
                         }
                     }
                 }
