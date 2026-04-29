@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CoreView: View {
+    
+    let viewTypeA: SimViewType
+    let viewTypeB: SimViewType
 
     @State private var simModel = SimModel()
     @State private var mapLabels = TuringMapLabels()
@@ -19,10 +22,34 @@ struct CoreView: View {
             Text("Turing Patterns")
                 .font(Font.largeTitle)
                 .padding(4)
+                .colorEffect(ShaderLibrary.passthrough())
             SimInformationView()
                 .padding(4)
             ZStack(alignment: .center) {
-                SimView()
+                HStack {
+                    // Always present at least one simulation view.
+                    switch viewTypeA {
+                    case .TILE:
+                        SimTileView()
+                    case .SHADER:
+                        SimShaderView()
+                    case .SMOOTH_SHADER:
+                        SimSmoothShaderView()
+                    case .NONE:
+                        SimTileView()
+                    }
+                    // Optionally present a second simulation view for comparison.
+                    if viewTypeB == .TILE {
+                        SimTileView()
+                    } else if viewTypeB == .SHADER {
+                        SimShaderView()
+                    } else if viewTypeB == .SMOOTH_SHADER {
+                        SimSmoothShaderView()
+                    }
+                }
+                .background(.white.opacity(0.3))
+                .padding(8)
+                
                 if showSelectView {
                     SimSelectView(showSelection: $showSelectView)
                         .frame(maxWidth: 380, maxHeight: 340)
@@ -69,5 +96,5 @@ struct CoreView: View {
 }
 
 #Preview {
-    CoreView().environment(SimModel())
+    CoreView(viewTypeA: .TILE, viewTypeB: .NONE).environment(SimModel())
 }

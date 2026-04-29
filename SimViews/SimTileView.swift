@@ -1,6 +1,13 @@
+//
+//  SimTileView.swift
+//  TuringSim
+//
+//  Created by Steve Roe on 2/19/26.
+//
+
 import SwiftUI
 
-struct SimView: View {
+struct SimTileView: View {
     @Environment(SimModel.self) var simModel
 
     func colorMap(level: Double) -> Color {
@@ -35,7 +42,7 @@ struct SimView: View {
                         cornerRadius: CGFloat(0.0),
                         style: .circular
                     )
-                    let cellColor = colorMap(level: simModel.level(w: w, h: h))
+                    let cellColor = colorMap(level: simModel.cellLevel(w: w, h: h))
                     context.fill(path, with: .color(cellColor))
                     context.stroke(path, with: .color(cellColor))
                 }
@@ -46,5 +53,5 @@ struct SimView: View {
 }
 
 #Preview {
-    SimView().environment(SimModel())
+    SimTileView().environment(SimModel())
 }

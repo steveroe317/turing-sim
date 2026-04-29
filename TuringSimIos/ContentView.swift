@@ -13,7 +13,7 @@ struct ContentView: View {
         ZStack {
             Color(red: 0.6, green: 0.3, blue: 0.2).edgesIgnoringSafeArea(.all)
             GeometryReader { geometry in
-                CoreView().frame(width: geometry.size.width,
+                CoreView(viewTypeA: .TILE, viewTypeB: .NONE).frame(width: geometry.size.width,
                                  height: geometry.size.height)
             }
 

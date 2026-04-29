@@ -5,6 +5,7 @@
 //  Created by Steve Roe on 11/15/25.
 //
 
+import Accelerate
 import Foundation
 
 @Observable
@@ -101,9 +102,30 @@ final class SimModel {
         simTask?.cancel()
     }
 
-    func level(w: Int, h: Int) -> Double {
+    func abLevel(a: Double, b: Double) -> Double {
+        return (a + b == 0) ? 1.0 : b / (a + b)
+    }
+    
+    func cellLevel(w: Int, h: Int) -> Double {
         let j = w * cellsPerEdge + h
-        return (A[j] + B[j] == 0) ? 1.0 : B[j] / (A[j] + B[j])
+        return abLevel(a: A[j], b: B[j])
+    }
+    
+    func getCellLevels() -> [Double] {
+        var levels: [Double] = []
+        levels.reserveCapacity(A.count)
+        for (a, b) in zip(A, B) {
+            levels.append(abLevel(a: a, b: b))
+        }
+        return levels
+    }
+    
+    func getAFloats() -> [Float] {
+        return vDSP.doubleToFloat(A)
+    }
+    
+    func getBFloats() -> [Float] {
+        return vDSP.doubleToFloat(B)
     }
 
     func isRunning() -> Bool {
