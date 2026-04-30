@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0E1E112FA2EC4F00D86260 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */; };
+		2B0E1E122FA2EC4F00D86260 /* SWIFTUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */; };
+		2B0E1E132FA2EC4F00D86260 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */; };
+		2B0E1E142FA2EC4F00D86260 /* SWIFTUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */; };
 		2B5838AC2F0E1D6C0095305B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5838AB2F0E1D6C0095305B /* Accelerate.framework */; };
 		2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2BB8A0532F0B0EE3006FDA5D /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -55,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SWIFTUI.md; sourceTree = "<group>"; };
 		2B5838AB2F0E1D6C0095305B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		2B8345AE2ED25A7000227F52 /* TuringSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345BB2ED25A7200227F52 /* TuringSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +297,8 @@
 		2B8345A52ED25A7000227F52 = {
 			isa = PBXGroup;
 			children = (
+				2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */,
+				2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */,
 				2BB8A0532F0B0EE3006FDA5D /* .gitignore */,
 				2BA4DE3B2F476B0E000292ED /* Shaders */,
 				2BB8A0A32F0B1112006FDA5D /* Data */,
@@ -557,6 +565,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */,
+				2B0E1E132FA2EC4F00D86260 /* CLAUDE.md in Resources */,
+				2B0E1E142FA2EC4F00D86260 /* SWIFTUI.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +588,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B0E1E112FA2EC4F00D86260 /* CLAUDE.md in Resources */,
+				2B0E1E122FA2EC4F00D86260 /* SWIFTUI.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
