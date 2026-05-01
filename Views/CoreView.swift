@@ -29,21 +29,21 @@ struct CoreView: View {
                 HStack {
                     // Always present at least one simulation view.
                     switch viewTypeA {
-                    case .TILE:
+                    case .tile:
                         SimTileView()
-                    case .SHADER:
+                    case .shader:
                         SimShaderView()
-                    case .SMOOTH_SHADER:
+                    case .smoothShader:
                         SimSmoothShaderView()
-                    case .NONE:
+                    case .none:
                         SimTileView()
                     }
                     // Optionally present a second simulation view for comparison.
-                    if viewTypeB == .TILE {
+                    if viewTypeB == .tile {
                         SimTileView()
-                    } else if viewTypeB == .SHADER {
+                    } else if viewTypeB == .shader {
                         SimShaderView()
-                    } else if viewTypeB == .SMOOTH_SHADER {
+                    } else if viewTypeB == .smoothShader {
                         SimSmoothShaderView()
                     }
                 }
@@ -94,5 +94,5 @@ struct CoreView: View {
 }
 
 #Preview {
-    CoreView(viewTypeA: .TILE, viewTypeB: .NONE).environment(SimModel())
+    CoreView(viewTypeA: .tile, viewTypeB: .none).environment(SimModel())
 }

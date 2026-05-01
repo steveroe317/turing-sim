@@ -6,8 +6,8 @@
 //
 
 enum SimViewType {
-    case TILE
-    case SHADER
-    case SMOOTH_SHADER
-    case NONE
+    case tile
+    case shader
+    case smoothShader
+    case none
 }
