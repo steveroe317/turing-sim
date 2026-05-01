@@ -162,19 +162,7 @@ class SimEngine {
         }
     }
 
-    func snapshots() -> AsyncStream<SimSnapshot> {
-        return AsyncStream { continuation in
-            Task {
-                while true {
-                    let snapshot = self.evolve(for: 50)
-                    continuation.yield(snapshot)
-                }
-                continuation.finish()
-            }
-        }
-    }
-
-    func evolve(for count: Int = 1) -> SimSnapshot {
+   func evolve(for count: Int = 1) -> SimSnapshot {
         if isSimRunning {
             for _ in 0..<count {
                 diffuse()
