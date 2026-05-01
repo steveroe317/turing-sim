@@ -18,7 +18,7 @@ struct SimSelectView: View {
         let id: Int
         let point: TuringMapPoint
 
-        func label(point: TuringMapPoint, mapLabels: TuringMapLabels) -> String {
+        func label(mapLabels: TuringMapLabels) -> String {
             return mapLabels.getLabel(forPoint: point) ?? ""
         }
     }
@@ -41,7 +41,7 @@ struct SimSelectView: View {
                 .bold()
             Picker("Select option", selection: $currentSelection) {
                 ForEach(selectMenuItems) { option in
-                    Text(option.label(point: option.point, mapLabels: mapLabels)).tag(
+                    Text(option.label(mapLabels: mapLabels)).tag(
                         option as TuringPointItem?
                     )
                 }
