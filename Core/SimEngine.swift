@@ -199,7 +199,6 @@ class SimEngine {
     }
 
     func seedRandomly() {
-        print("SimEngineGraph: seeding random")
         for w in 0..<cellsPerEdge {
             for h in 0..<cellsPerEdge {
                 if Int.random(in: 0..<10000) < 1 {
@@ -207,6 +206,5 @@ class SimEngine {
                 }
             }
         }
-        print("SimEngineGraph: seeded")
     }
 }
