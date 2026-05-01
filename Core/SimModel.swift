@@ -46,7 +46,7 @@ final class SimModel {
             while true {
                 isSimRunning = await engine.isRunning()
                 if !isSimRunning {
-                    try await Task.sleep(nanoseconds: 10_000_000)
+                    try await Task.sleep(for: .milliseconds(50))
                 }
                 
                 let engine_f = await engine.f
