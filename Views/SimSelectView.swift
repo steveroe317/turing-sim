@@ -67,12 +67,8 @@ struct SimSelectView: View {
                 Button("Confirm", role: .confirm) {
                     showSelection = false
                     if let currentSelection = currentSelection {
-                        if currentSelection.point.f != 0
-                            && currentSelection.point.k != 0
-                        {
-                            simModel.f = currentSelection.point.f
-                            simModel.k = currentSelection.point.k
-                        }
+                        simModel.f = currentSelection.point.f
+                        simModel.k = currentSelection.point.k
                     }
                 }
                 Spacer()
