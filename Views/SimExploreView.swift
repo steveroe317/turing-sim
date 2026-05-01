@@ -24,11 +24,11 @@ struct SimExploreView: View {
             SimParameterView(label: "F", simParameter: $f)
                 .background(.white.opacity(0.5))
                 .frame(maxWidth: 380)
-                .cornerRadius(10)
+                .clipShape(.rect(cornerRadius: 10))
             SimParameterView(label: "K", simParameter: $k)
                 .background(.white.opacity(0.5))
                 .frame(maxWidth: 380)
-                .cornerRadius(10)
+                .clipShape(.rect(cornerRadius: 10))
             HStack {
                 Button("Confirm", role: .confirm) {
                     self.showExploreView.toggle()
@@ -43,7 +43,7 @@ struct SimExploreView: View {
         }
         .padding(20)
         .background(.gray)
-        .cornerRadius(25.0)
+        .clipShape(.rect(cornerRadius: 25.0))
         .task {
             f = simModel.f
             k = simModel.k
