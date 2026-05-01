@@ -16,7 +16,7 @@ struct SimParameterView: View {
             HStack {
                 Spacer()
                 Stepper(
-                    String(format: "\(label): %.3f", simParameter),
+                    "\(label): \(simParameter.formatted(.number.precision(.fractionLength(3))))",
                     value: $simParameter,
                     in: 0.0...0.1,
                     step: 0.001
@@ -31,7 +31,7 @@ struct SimParameterView: View {
             VStack {
                 Spacer()
                 Stepper(
-                    String(format: "\(label): %.3f", simParameter),
+                    "\(label): \(simParameter.formatted(.number.precision(.fractionLength(3))))",
                     value: $simParameter,
                     in: 0.0...0.1,
                     step: 0.001

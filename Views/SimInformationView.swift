@@ -13,15 +13,10 @@ struct SimInformationView: View {
 
     var body: some View {
         let minInfoWidth = CGFloat(120)
+        let numFormat = FloatingPointFormatStyle<Double>.number.precision(.fractionLength(3))
         ViewThatFits {
             HStack(alignment: .lastTextBaseline) {
-                Text(
-                    String(
-                        format: "F %.3f, K %.3f",
-                        simModel.f,
-                        simModel.k
-                    )
-                )
+                Text("F \(simModel.f, format: numFormat), K \(simModel.k, format: numFormat)")
                 .frame(minWidth: minInfoWidth, alignment: .leading)
                 .padding(4)
                 Text(mapLabels.getLabel(forPoint: .init(f: simModel.f, k: simModel.k)) ?? "")
@@ -36,13 +31,7 @@ struct SimInformationView: View {
             }
             VStack {
                 HStack(alignment: .lastTextBaseline) {
-                    Text(
-                        String(
-                            format: "F %.3f, K %.3f",
-                            simModel.f,
-                            simModel.k
-                        )
-                    )
+                    Text("F \(simModel.f, format: numFormat), K \(simModel.k, format: numFormat)")
                     .frame(minWidth: minInfoWidth, alignment: .leading)
                     .padding(4)
                     Text(mapLabels.getLabel(forPoint: .init(f: simModel.f, k: simModel.k)) ?? "")
@@ -59,13 +48,7 @@ struct SimInformationView: View {
                 }
             }
             VStack {
-                Text(
-                    String(
-                        format: "F %.3f, K %.3f",
-                        simModel.f,
-                        simModel.k
-                    )
-                )
+                Text("F \(simModel.f, format: numFormat), K \(simModel.k, format: numFormat)")
                 .frame(minWidth: minInfoWidth, alignment: .leading)
                 .padding(4)
                 Text("Generation \(simModel.generation)")
