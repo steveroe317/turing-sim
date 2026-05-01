@@ -45,7 +45,7 @@ struct SimSelectView: View {
         
         VStack {
             Text("Select Simulation Parameters")
-                .bold(true)
+                .bold()
             Picker("Select option", selection: $currentSelection) {
                 ForEach(menuItems) { option in
                     Text(option.label(point: option.point, mapLabels: mapLabels)).tag(
