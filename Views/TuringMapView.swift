@@ -58,7 +58,6 @@ struct TuringMapView: View {
         } else {
             x += (size.width - size.height) / 2
         }
-        print(x, y)
         return CGPoint(x: x, y: y)
     }
     
