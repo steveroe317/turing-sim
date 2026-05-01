@@ -149,7 +149,7 @@ struct SimControlView: View {
                         .frame(width: buttonMaxWidth)  // Apply the determined max width
                         .padding(4)
                     }
-
+                    
                     Button("Seed") {
                         simModel.seedRandomly()
                     }
@@ -163,7 +163,7 @@ struct SimControlView: View {
                     )
                     .frame(width: buttonMaxWidth)  // Apply the determined max width
                     .padding(4)
-
+                    
                     Button("Reset") {
                         simModel.reset()
                     }
@@ -193,7 +193,7 @@ struct SimControlView: View {
                     .frame(width: buttonMaxWidth)  // Apply the determined max width
                     .padding(4)
                     .disabled(showExploreView)
-
+                    
                     Button("Explore") {
                         showExploreView = true
                     }
@@ -209,9 +209,9 @@ struct SimControlView: View {
                     .padding(4)
                     .disabled(showSelectView)
                 }
-                .onPreferenceChange(ButtonWidthPreferenceKey.self) { maxWidth in
-                    self.buttonMaxWidth = maxWidth
-                }
+            }
+            .onPreferenceChange(ButtonWidthPreferenceKey.self) { maxWidth in
+                self.buttonMaxWidth = maxWidth
             }
         }
     }
