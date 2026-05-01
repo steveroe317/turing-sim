@@ -22,22 +22,15 @@ struct SimSelectView: View {
             return mapLabels.getLabel(forPoint: point) ?? ""
         }
     }
-
-    let menuItems: [TuringPointItem] = [
-        TuringPointItem(id: 1, point: TuringMapPoint(f: 0.055, k: 0.062)),
-        TuringPointItem(id: 2, point: TuringMapPoint(f: 0.042, k: 0.059)),
-        TuringPointItem(id: 3, point: TuringMapPoint(f: 0.038, k: 0.061)),
-        TuringPointItem(id: 4, point: TuringMapPoint(f: 0.034, k: 0.061)),
-        TuringPointItem(id: 5, point: TuringMapPoint(f: 0.034, k: 0.063)),
-        TuringPointItem(id: 6, point: TuringMapPoint(f: 0.026, k: 0.052)),
-        TuringPointItem(id: 7, point: TuringMapPoint(f: 0.022, k: 0.050)),
-        TuringPointItem(id: 8, point: TuringMapPoint(f: 0.026, k: 0.056)),
-        TuringPointItem(id: 9, point: TuringMapPoint(f: 0.022, k: 0.048)),
-        TuringPointItem(id: 10, point: TuringMapPoint(f: 0.016, k: 0.048)),
-        TuringPointItem(id: 11, point: TuringMapPoint(f: 0.014, k: 0.040)),
-        TuringPointItem(id: 12, point: TuringMapPoint(f: 0.014, k: 0.050)),
-        TuringPointItem(id: 13, point: TuringMapPoint(f: 0.014, k: 0.053)),
-    ]
+    
+    static func makeMenuItems(from labels: TuringMapLabels) -> [TuringPointItem] {
+        labels.labels.keys.enumerated().map { index, point in
+            TuringPointItem(id: index, point: point)
+        }
+        .sorted { $0.point.f > $1.point.f }
+    }
+    
+    let selectMenuItems = makeMenuItems(from: TuringMapLabels())
 
     @State private var currentSelection: TuringPointItem? = TuringPointItem(id: 1, point: TuringMapPoint(f: 0.055, k: 0.062))
 
@@ -47,7 +40,7 @@ struct SimSelectView: View {
             Text("Select Simulation Parameters")
                 .bold()
             Picker("Select option", selection: $currentSelection) {
-                ForEach(menuItems) { option in
+                ForEach(selectMenuItems) { option in
                     Text(option.label(point: option.point, mapLabels: mapLabels)).tag(
                         option as TuringPointItem?
                     )
@@ -84,7 +77,7 @@ struct SimSelectView: View {
         .clipShape(.rect(cornerRadius: 25))
         .task {
             let base = TuringMapPoint(f: simModel.f, k: simModel.k)
-            currentSelection = menuItems.min(by: { base.distance(to: $0.point) < base.distance(to: $1.point) })
+            currentSelection = selectMenuItems.min(by: { base.distance(to: $0.point) < base.distance(to: $1.point) })
         }
     }
 }
