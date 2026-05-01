@@ -57,8 +57,6 @@ struct CoreView: View {
                     ViewThatFits {
                         SimExploreView(mapScale: 800, showExploreView: $showExploreView)
                             .aspectRatio(1.0, contentMode: .fit)
-                        SimExploreView(mapScale: 800, showExploreView: $showExploreView)
-                            .aspectRatio(1.0, contentMode: .fit)
                         SimExploreView(mapScale: 700, showExploreView: $showExploreView)
                             .aspectRatio(1.0, contentMode: .fit)
                         SimExploreView(mapScale: 600, showExploreView: $showExploreView)
