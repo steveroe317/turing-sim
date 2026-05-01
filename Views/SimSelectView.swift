@@ -58,7 +58,7 @@ struct SimSelectView: View {
             #endif
             .background(colorScheme == .light ? Color(Color.skyBlue) : Color.darkSkyBlue)
             .foregroundColor(colorScheme == .light ? Color(.darkGray) : Color(.lightGray))
-            .accentColor(colorScheme == .light ?  .black : .white)
+            .tint(colorScheme == .light ?  .black : .white)
             .clipShape(.rect(cornerRadius: 10))
             .padding(.horizontal, 20.0)
             .padding(.vertical, 10.0)
