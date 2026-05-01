@@ -8,6 +8,9 @@ xcuserdata/
 ## Breakpoints
 *.xcbkptlist
 
+## macOS folder metadata files
+**/.DS_Store
+
 ## Obj-C/Swift specific
 *.hmap
 
