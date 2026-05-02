@@ -117,7 +117,7 @@ private struct ResetButton: View {
     @Environment(SimModel.self) var simModel
 
     var body: some View {
-        Button("Reset") {
+        Button("Reset", role: .destructive) {
             simModel.reset()
         }
         .modifier(MeasuredWidthModifier())
