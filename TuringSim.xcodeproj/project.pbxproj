@@ -118,6 +118,8 @@
 				SimExploreView.swift,
 				SimInformationView.swift,
 				SimParameterView.swift,
+				SimSelectPicker.swift,
+				SimSelectPickerItem.swift,
 				SimSelectView.swift,
 				TuringMapView.swift,
 			);

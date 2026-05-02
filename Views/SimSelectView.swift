@@ -7,22 +7,21 @@
 
 import SwiftUI
 
+struct HeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
+    }
+}
+
 struct SimSelectView: View {
     @Binding var showSelection: Bool
 
     @Environment(SimModel.self) var simModel
     @Environment(TuringMapLabels.self) var mapLabels
-    @Environment(\.colorScheme) var colorScheme
-
-    struct TuringPointItem: Identifiable, Hashable {
-        let id: Int
-        let point: TuringMapPoint
-
-        func label(mapLabels: TuringMapLabels) -> String {
-            return mapLabels.getLabel(forPoint: point) ?? ""
-        }
-    }
     
+    @State private var pickerHeight: CGFloat = 0
+
     func makeMenuItems(from labels: TuringMapLabels) -> [TuringPointItem] {
         labels.labels.keys.enumerated().map { index, point in
             TuringPointItem(id: index, point: point)
@@ -30,31 +29,33 @@ struct SimSelectView: View {
         .sorted { $0.point.f > $1.point.f }
     }
     
-    @State private var currentSelection: TuringPointItem? = TuringPointItem(id: 1, point: TuringMapPoint(f: 0.055, k: 0.062))
+    @State private var isLoading: Bool = true
+    @State private var currentSelection: TuringPointItem?
 
     var body: some View {
-
         let selectMenuItems = makeMenuItems(from: mapLabels)
 
         VStack {
             Text("Select Simulation Parameters")
                 .bold()
-            Picker("Select option", selection: $currentSelection) {
-                ForEach(selectMenuItems) { option in
-                    Text(option.label(mapLabels: mapLabels)).tag(
-                        option as TuringPointItem?
-                    )
+            ZStack {
+                if isLoading{
+                    ProgressView()
+                        .frame(height: pickerHeight)
+                } else {
+                    SimSelectPicker(menuItems: selectMenuItems, selection: $currentSelection)
                 }
+                // Measure hidden picker height to size the placeholder ProgressView.
+                SimSelectPicker(menuItems: selectMenuItems, selection: $currentSelection)
+                    .hidden()
+                    .background(GeometryReader { geo in
+                        Color.clear
+                            .preference(key: HeightKey.self, value: geo.size.height)
+                    })
             }
-            #if os(iOS)
-                .pickerStyle(WheelPickerStyle())
-            #endif
-            .background(colorScheme == .light ? Color(Color.skyBlue) : Color.darkSkyBlue)
-            .foregroundColor(colorScheme == .light ? Color(.darkGray) : Color(.lightGray))
-            .tint(colorScheme == .light ?  .black : .white)
-            .clipShape(.rect(cornerRadius: 10))
-            .padding(.horizontal, 20.0)
-            .padding(.vertical, 10.0)
+            .onPreferenceChange(HeightKey.self) { height in
+                pickerHeight = height
+            }
             HStack {
                 Spacer()
                 Button("Confirm", role: .confirm) {
@@ -78,6 +79,7 @@ struct SimSelectView: View {
         .task {
             let base = TuringMapPoint(f: simModel.f, k: simModel.k)
             currentSelection = selectMenuItems.min(by: { base.distance(to: $0.point) < base.distance(to: $1.point) })
+            isLoading = false
         }
     }
 }
