@@ -27,7 +27,7 @@ struct SimSelectPicker: View {
         .pickerStyle(WheelPickerStyle())
 #endif
         .background(colorScheme == .light ? Color(Color.skyBlue) : Color.darkSkyBlue)
-        .foregroundColor(colorScheme == .light ? Color(.darkGray) : Color(.lightGray))
+        .foregroundStyle(colorScheme == .light ? Color(.darkGray) : Color(.lightGray))
         .tint(colorScheme == .light ?  .black : .white)
         .clipShape(.rect(cornerRadius: 10))
         .padding(.horizontal, 20.0)
