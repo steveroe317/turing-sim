@@ -19,5 +19,5 @@ struct SimButtonStyle: ButtonStyle {
 #Preview {
     Button("Hello") {
         
-    }.buttonStyle(SimButtonStyle());
+    }.buttonStyle(SimButtonStyle())
 }
