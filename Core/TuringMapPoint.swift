@@ -12,6 +12,8 @@ struct TuringMapPoint: Hashable {
     let k: Double
     
     func distance(to other: TuringMapPoint) -> Double {
-        return sqrt(pow(f - other.f, 2) + pow(k - other.k, 2))
+        let df = f - other.f
+        let dk = k - other.k
+        return sqrt(df * df + dk * dk)
     }
 }
