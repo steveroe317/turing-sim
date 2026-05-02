@@ -10,7 +10,7 @@ import Foundation
 @SimActor
 class SimEngine {
     let cellsPerEdge = 201
-    var totalCells = 201 * 201
+    let totalCells : Int
     let seedRadius = 5
     var generation: Int = 0
     private var isSimRunning: Bool = true
