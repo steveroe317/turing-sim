@@ -37,11 +37,7 @@ struct SimTileView: View {
                     let y = CGFloat(h) * cellSpan + ybase
                     let cellBase = CGPoint(x: x, y: y)
                     let cellRect = CGRect(origin: cellBase, size: cellSize)
-                    let path = Path(
-                        roundedRect: cellRect,
-                        cornerRadius: CGFloat(0.0),
-                        style: .circular
-                    )
+                    let path = Path(cellRect)
                     let cellColor = colorMap(level: simModel.cellLevel(w: w, h: h))
                     context.fill(path, with: .color(cellColor))
                     context.stroke(path, with: .color(cellColor))
