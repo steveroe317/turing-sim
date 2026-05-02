@@ -15,6 +15,16 @@ struct ButtonWidthPreferenceKey: PreferenceKey {
     }
 }
 
+struct MeasuredWidthModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content.background(
+            GeometryReader { geo in
+                Color.clear.preference(key: ButtonWidthPreferenceKey.self, value: geo.size.width)
+            }
+        )
+    }
+}
+
 struct SimControlView: View {
     @Binding var showSelectView: Bool
     @Binding var showExploreView: Bool
@@ -26,194 +36,108 @@ struct SimControlView: View {
     var body: some View {
         ViewThatFits {
             HStack(alignment: .lastTextBaseline) {
-                if simModel.isRunning() {
-                    Button("Pause") {
-                        simModel.pause()
-                    }
-                    .background(
-                        GeometryReader { geometry in
-                            Color.clear.preference(
-                                key: ButtonWidthPreferenceKey.self,
-                                value: geometry.size.width
-                            )
-                        }
-                    )
-                    .frame(width: buttonMaxWidth)  // Apply the determined max width
-                    .padding(4)
-                } else {
-                    Button("Start") {
-                        simModel.start()
-                    }
-                    .background(
-                        GeometryReader { geometry in
-                            Color.clear.preference(
-                                key: ButtonWidthPreferenceKey.self,
-                                value: geometry.size.width
-                            )
-                        }
-                    )
-                    .frame(width: buttonMaxWidth)  // Apply the determined max width
-                    .padding(4)
-                }
-
-                Button("Reset", role: .destructive) {
-                    simModel.reset()
-                }
-                .background(
-                    GeometryReader { geometry in
-                        Color.clear.preference(
-                            key: ButtonWidthPreferenceKey.self,
-                            value: geometry.size.width
-                        )
-                    }
-                )
-                .frame(width: buttonMaxWidth)  // Apply the determined max width
-                .padding(4)
-
-                Button("Seed") {
-                    simModel.seedRandomly()
-                }
-                .background(
-                    GeometryReader { geometry in
-                        Color.clear.preference(
-                            key: ButtonWidthPreferenceKey.self,
-                            value: geometry.size.width
-                        )
-                    }
-                )
-                .frame(width: buttonMaxWidth)  // Apply the determined max width
-                .padding(4)
-
-                Button("Select") {
-                    showSelectView = true
-                }
-                .background(
-                    GeometryReader { geometry in
-                        Color.clear.preference(
-                            key: ButtonWidthPreferenceKey.self,
-                            value: geometry.size.width
-                        )
-                    }
-                )
-                .frame(width: buttonMaxWidth)  // Apply the determined max width
-                .padding(4)
+                StartPauseButton(buttonMaxWidth: $buttonMaxWidth)
+                SeedButton(buttonMaxWidth: $buttonMaxWidth)
+                ResetButton(buttonMaxWidth: $buttonMaxWidth)
+                SetBoolButton(title:"Select", value: $showSelectView, buttonMaxWidth:
+                                $buttonMaxWidth)
                 .disabled(showExploreView)
-
-                Button("Explore") {
-                    showExploreView = true
-                }
-                .background(
-                    GeometryReader { geometry in
-                        Color.clear.preference(
-                            key: ButtonWidthPreferenceKey.self,
-                            value: geometry.size.width
-                        )
-                    }
-                )
-                .frame(width: buttonMaxWidth)  // Apply the determined max width
-                .padding(4)
+                SetBoolButton(title:"Explore", value: $showExploreView, buttonMaxWidth:
+                                $buttonMaxWidth)
                 .disabled(showSelectView)
             }
-            .onPreferenceChange(ButtonWidthPreferenceKey.self) { maxWidth in
-                self.buttonMaxWidth = maxWidth
+            .onPreferenceChange(ButtonWidthPreferenceKey.self) {
+                buttonMaxWidth = $0
             }
 
             VStack {
                 HStack(alignment: .lastTextBaseline) {
-                    if simModel.isRunning() {
-                        Button("Pause") {
-                            simModel.pause()
-                        }
-                        .background(
-                            GeometryReader { geometry in
-                                Color.clear.preference(
-                                    key: ButtonWidthPreferenceKey.self,
-                                    value: geometry.size.width
-                                )
-                            }
-                        )
-                        .frame(width: buttonMaxWidth)  // Apply the determined max width
-                        .padding(4)
-                    } else {
-                        Button("Start") {
-                            simModel.start()
-                        }
-                        .background(
-                            GeometryReader { geometry in
-                                Color.clear.preference(
-                                    key: ButtonWidthPreferenceKey.self,
-                                    value: geometry.size.width
-                                )
-                            }
-                        )
-                        .frame(width: buttonMaxWidth)  // Apply the determined max width
-                        .padding(4)
-                    }
-                    
-                    Button("Seed") {
-                        simModel.seedRandomly()
-                    }
-                    .background(
-                        GeometryReader { geometry in
-                            Color.clear.preference(
-                                key: ButtonWidthPreferenceKey.self,
-                                value: geometry.size.width
-                            )
-                        }
-                    )
-                    .frame(width: buttonMaxWidth)  // Apply the determined max width
-                    .padding(4)
-                    
-                    Button("Reset") {
-                        simModel.reset()
-                    }
-                    .background(
-                        GeometryReader { geometry in
-                            Color.clear.preference(
-                                key: ButtonWidthPreferenceKey.self,
-                                value: geometry.size.width
-                            )
-                        }
-                    )
-                    .frame(width: buttonMaxWidth)  // Apply the determined max width
-                    .padding(4)
+                    StartPauseButton(buttonMaxWidth: $buttonMaxWidth)
+                    SeedButton(buttonMaxWidth: $buttonMaxWidth)
+                    ResetButton(buttonMaxWidth: $buttonMaxWidth)
                 }
                 HStack(alignment: .lastTextBaseline) {
-                    Button("Select") {
-                        showSelectView = true
-                    }
-                    .background(
-                        GeometryReader { geometry in
-                            Color.clear.preference(
-                                key: ButtonWidthPreferenceKey.self,
-                                value: geometry.size.width
-                            )
-                        }
-                    )
-                    .frame(width: buttonMaxWidth)  // Apply the determined max width
-                    .padding(4)
+                    SetBoolButton(title:"Select", value: $showSelectView, buttonMaxWidth:
+                                    $buttonMaxWidth)
                     .disabled(showExploreView)
-                    
-                    Button("Explore") {
-                        showExploreView = true
-                    }
-                    .background(
-                        GeometryReader { geometry in
-                            Color.clear.preference(
-                                key: ButtonWidthPreferenceKey.self,
-                                value: geometry.size.width
-                            )
-                        }
-                    )
-                    .frame(width: buttonMaxWidth)  // Apply the determined max width
-                    .padding(4)
+                    SetBoolButton(title:"Explore", value: $showExploreView, buttonMaxWidth:
+                                    $buttonMaxWidth)
                     .disabled(showSelectView)
                 }
             }
-            .onPreferenceChange(ButtonWidthPreferenceKey.self) { maxWidth in
-                self.buttonMaxWidth = maxWidth
+            .onPreferenceChange(ButtonWidthPreferenceKey.self) {
+                buttonMaxWidth = $0
             }
         }
+    }
+}
+
+private struct StartPauseButton: View {
+    @Binding var buttonMaxWidth: CGFloat?
+    
+    @Environment(SimModel.self) var simModel
+
+    var body: some View {
+        if simModel.isRunning() {
+            Button("Pause") {
+                simModel.pause()
+            }
+            .modifier(MeasuredWidthModifier())
+            .frame(width: buttonMaxWidth)  // Apply the determined max width
+            .padding(4)
+        } else {
+            Button("Start") {
+                simModel.start()
+            }
+            .modifier(MeasuredWidthModifier())
+            .frame(width: buttonMaxWidth)  // Apply the determined max width
+            .padding(4)
+        }
+    }
+}
+
+private struct SeedButton: View {
+    @Binding var buttonMaxWidth: CGFloat?
+    
+    @Environment(SimModel.self) var simModel
+
+    var body: some View {
+        Button("Seed") {
+            simModel.seedRandomly()
+        }
+        .modifier(MeasuredWidthModifier())
+        .frame(width: buttonMaxWidth)  // Apply the determined max width
+        .padding(4)
+    }
+}
+
+private struct ResetButton: View {
+    @Binding var buttonMaxWidth: CGFloat?
+    
+    @Environment(SimModel.self) var simModel
+
+    var body: some View {
+        Button("Reset") {
+            simModel.reset()
+        }
+        .modifier(MeasuredWidthModifier())
+        .frame(width: buttonMaxWidth)  // Apply the determined max width
+        .padding(4)
+    }
+}
+
+private struct SetBoolButton: View {
+    let title: String
+    @Binding var value: Bool
+    @Binding var buttonMaxWidth: CGFloat?
+    
+    var body: some View {
+        Button(title) {
+            value = true
+        }
+        .modifier(MeasuredWidthModifier())
+        .frame(width: buttonMaxWidth)  // Apply the determined max width
+        .padding(4)
     }
 }
 
