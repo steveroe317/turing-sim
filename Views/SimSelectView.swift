@@ -23,19 +23,19 @@ struct SimSelectView: View {
         }
     }
     
-    static func makeMenuItems(from labels: TuringMapLabels) -> [TuringPointItem] {
+    func makeMenuItems(from labels: TuringMapLabels) -> [TuringPointItem] {
         labels.labels.keys.enumerated().map { index, point in
             TuringPointItem(id: index, point: point)
         }
         .sorted { $0.point.f > $1.point.f }
     }
     
-    let selectMenuItems = makeMenuItems(from: TuringMapLabels())
-
     @State private var currentSelection: TuringPointItem? = TuringPointItem(id: 1, point: TuringMapPoint(f: 0.055, k: 0.062))
 
     var body: some View {
-        
+
+        let selectMenuItems = makeMenuItems(from: mapLabels)
+
         VStack {
             Text("Select Simulation Parameters")
                 .bold()
