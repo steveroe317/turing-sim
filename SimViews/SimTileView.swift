@@ -33,12 +33,16 @@ struct SimTileView: View {
 
             for w in 0..<simModel.cellsPerEdge {
                 for h in 0..<simModel.cellsPerEdge {
+                    // Set up tile drawing path and color.
                     let x = CGFloat(w) * cellSpan + xbase
                     let y = CGFloat(h) * cellSpan + ybase
                     let cellBase = CGPoint(x: x, y: y)
                     let cellRect = CGRect(origin: cellBase, size: cellSize)
                     let path = Path(cellRect)
                     let cellColor = colorMap(level: simModel.cellLevel(w: w, h: h))
+                    
+                    // Draw the tile. Note that the stroke after the fill is not redundant.
+                    // Omitting the stroke produces a screen door effect on both macOS and iOS.
                     context.fill(path, with: .color(cellColor))
                     context.stroke(path, with: .color(cellColor))
                 }
