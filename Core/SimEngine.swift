@@ -137,14 +137,6 @@ class SimEngine {
         }
     }
 
-    func maxA() -> Double {
-        return A.max() ?? -1.0
-    }
-
-    func maxB() -> Double {
-        return B.max() ?? -1.0
-    }
-
     func diffuse() {
 
         for j in 0..<totalCells {
