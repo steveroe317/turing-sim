@@ -39,12 +39,15 @@ struct CoreView: View {
                         SimTileView()
                     }
                     // Optionally present a second simulation view for comparison.
-                    if viewTypeB == .tile {
+                    switch viewTypeB {
+                    case .tile:
                         SimTileView()
-                    } else if viewTypeB == .shader {
+                    case .shader:
                         SimShaderView()
-                    } else if viewTypeB == .smoothShader {
+                    case .smoothShader:
                         SimSmoothShaderView()
+                    case .none:
+                        EmptyView()
                     }
                 }
                 .background(.white.opacity(0.3))
