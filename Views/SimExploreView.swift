@@ -12,10 +12,17 @@ struct SimExploreView: View {
     @Environment(SimModel.self) var simModel
 
     @Binding var showExploreView: Bool
-    
-    @State var f : Double = 0.05
-    @State var k : Double = 0.05
-    
+
+    @State var f: Double
+    @State var k: Double
+
+    init(mapScale: CGFloat, showExploreView: Binding<Bool>, initialF: Double, initialK: Double) {
+        self.mapScale = mapScale
+        self._showExploreView = showExploreView
+        self._f = State(initialValue: initialF)
+        self._k = State(initialValue: initialK)
+    }
+
     var body: some View {
         @Bindable var simModel = simModel
 
@@ -44,15 +51,12 @@ struct SimExploreView: View {
         .padding(20)
         .background(.gray)
         .clipShape(.rect(cornerRadius: 25.0))
-        .task {
-            f = simModel.f
-            k = simModel.k
-        }
     }
 }
 
 
 #Preview {
     @Previewable @State var show: Bool = true
-    SimExploreView(mapScale: 300, showExploreView: $show).environment(SimModel())
+    SimExploreView(mapScale: 300, showExploreView: $show, initialF: 0.055, initialK: 0.062)
+        .environment(SimModel())
 }

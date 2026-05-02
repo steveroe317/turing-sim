@@ -55,17 +55,17 @@ struct CoreView: View {
                         .frame(maxWidth: 380, maxHeight: 340)
                 } else if showExploreView {
                     ViewThatFits {
-                        SimExploreView(mapScale: 800, showExploreView: $showExploreView)
+                        SimExploreView(mapScale: 800, showExploreView: $showExploreView, initialF: simModel.f, initialK: simModel.k)
                             .aspectRatio(1.0, contentMode: .fit)
-                        SimExploreView(mapScale: 700, showExploreView: $showExploreView)
+                        SimExploreView(mapScale: 700, showExploreView: $showExploreView, initialF: simModel.f, initialK: simModel.k)
                             .aspectRatio(1.0, contentMode: .fit)
-                        SimExploreView(mapScale: 600, showExploreView: $showExploreView)
+                        SimExploreView(mapScale: 600, showExploreView: $showExploreView, initialF: simModel.f, initialK: simModel.k)
                             .aspectRatio(1.0, contentMode: .fit)
-                        SimExploreView(mapScale: 500, showExploreView: $showExploreView)
+                        SimExploreView(mapScale: 500, showExploreView: $showExploreView, initialF: simModel.f, initialK: simModel.k)
                             .aspectRatio(1.0, contentMode: .fit)
-                        SimExploreView(mapScale: 400, showExploreView: $showExploreView)
+                        SimExploreView(mapScale: 400, showExploreView: $showExploreView, initialF: simModel.f, initialK: simModel.k)
                             .aspectRatio(1.0, contentMode: .fit)
-                        SimExploreView(mapScale: 300, showExploreView: $showExploreView)
+                        SimExploreView(mapScale: 300, showExploreView: $showExploreView, initialF: simModel.f, initialK: simModel.k)
                             .aspectRatio(1.0, contentMode: .fit)
                     }
                 }
