@@ -16,7 +16,6 @@ final class SimModel {
     var generation = 0
     var generationRate = 0.0
     
-    var frame = 0
     let generationsPerFrame: Int = 50
     let frameSamples = 10
     private var frameTimes: [Double]
