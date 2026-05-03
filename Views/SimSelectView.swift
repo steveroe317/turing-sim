@@ -68,7 +68,6 @@ struct SimSelectView: View {
                 Spacer()
                 Button("Cancel", role: .cancel) {
                     showSelection = false
-                    print("no selection")
                 }
                 Spacer()
             }
