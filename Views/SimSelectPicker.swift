@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+import SharedAssets
+
 struct SimSelectPicker: View {
     var menuItems: [TuringPointItem]
     @Binding var selection: TuringPointItem?
     
     @Environment(TuringMapLabels.self) var mapLabels
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
 
     var body: some View {
         
@@ -26,9 +27,9 @@ struct SimSelectPicker: View {
 #if os(iOS)
         .pickerStyle(WheelPickerStyle())
 #endif
-        .background(colorScheme == .light ? Color.skyBlue : Color.darkSkyBlue)
-        .foregroundStyle(colorScheme == .light ? Color.darkGray : Color.lightGray)
-        .tint(colorScheme == .light ?  .black : .white)
+        .background(Color.pickerBackground)
+        .foregroundStyle(Color.pickerForeground)
+        .tint(Color.pickerTint)
         .clipShape(.rect(cornerRadius: 10))
         .padding(.horizontal, 20.0)
         .padding(.vertical, 10.0)

@@ -17,6 +17,8 @@
 		2B0E1E142FA2EC4F00D86260 /* SWIFTUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */; };
 		2B5838AC2F0E1D6C0095305B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5838AB2F0E1D6C0095305B /* Accelerate.framework */; };
 		2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2BB8A0532F0B0EE3006FDA5D /* .gitignore */; };
+		2BE2D9E62FA6C44A00C022BB /* SharedAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 2BE2D9E52FA6C44A00C022BB /* SharedAssets */; };
+		2BE2D9E82FA6C45900C022BB /* SharedAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 2BE2D9E72FA6C45900C022BB /* SharedAssets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +70,14 @@
 		2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SWIFTUI.md; sourceTree = "<group>"; };
 		2B5838AB2F0E1D6C0095305B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		2B6AE42A2FA6B4AC00D94158 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2B8345AE2ED25A7000227F52 /* TuringSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345BB2ED25A7200227F52 /* TuringSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345C52ED25A7200227F52 /* TuringSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345E62ED37FF500227F52 /* TuringTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TuringTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB8A0532F0B0EE3006FDA5D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2BE2D9E02FA6C17300C022BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BE2D9E32FA6C29A00C022BB /* Color+TuringSim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+TuringSim.swift"; sourceTree = "<group>"; };
 		2BF83DF02EDA0810009C977B /* TuringSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF83DFC2EDA0811009C977B /* TuringSimAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF83E062EDA0811009C977B /* TuringSimAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE2D9E82FA6C45900C022BB /* SharedAssets in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE2D9E62FA6C44A00C022BB /* SharedAssets in Frameworks */,
 				2B5838AC2F0E1D6C0095305B /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +326,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2B6AE4282FA6B30F00D94158 /* SharedAssets */ = {
+			isa = PBXGroup;
+			children = (
+				2B6AE42A2FA6B4AC00D94158 /* Package.swift */,
+				2B6AE42F2FA6B4BC00D94158 /* Sources */,
+			);
+			path = SharedAssets;
+			sourceTree = "<group>";
+		};
+		2B6AE4292FA6B30F00D94158 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				2B6AE4282FA6B30F00D94158 /* SharedAssets */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		2B6AE42E2FA6B4BC00D94158 /* SharedAssets */ = {
+			isa = PBXGroup;
+			children = (
+				2BE2D9E02FA6C17300C022BB /* Assets.xcassets */,
+				2BE2D9E32FA6C29A00C022BB /* Color+TuringSim.swift */,
+			);
+			path = SharedAssets;
+			sourceTree = "<group>";
+		};
+		2B6AE42F2FA6B4BC00D94158 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2B6AE42E2FA6B4BC00D94158 /* SharedAssets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		2B8345A52ED25A7000227F52 = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +381,7 @@
 				2BF83E092EDA0811009C977B /* TuringSimAppUITests */,
 				2B5838AA2F0E1D6C0095305B /* Frameworks */,
 				2B8345AF2ED25A7000227F52 /* Products */,
+				2B6AE4292FA6B30F00D94158 /* Packages */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,6 +424,7 @@
 			);
 			name = TuringSim;
 			packageProductDependencies = (
+				2BE2D9E72FA6C45900C022BB /* SharedAssets */,
 			);
 			productName = TuringSim;
 			productReference = 2B8345AE2ED25A7000227F52 /* TuringSim.app */;
@@ -472,6 +515,7 @@
 			);
 			name = TuringSimApp;
 			packageProductDependencies = (
+				2BE2D9E52FA6C44A00C022BB /* SharedAssets */,
 			);
 			productName = TuringSimApp;
 			productReference = 2BF83DF02EDA0810009C977B /* TuringSim.app */;
@@ -569,6 +613,9 @@
 			);
 			mainGroup = 2B8345A52ED25A7000227F52;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2BE2D9E42FA6C42600C022BB /* XCLocalSwiftPackageReference "Packages/SharedAssets" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2B8345AF2ED25A7000227F52 /* Products */;
 			projectDirPath = "";
@@ -1238,6 +1285,26 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2BE2D9E42FA6C42600C022BB /* XCLocalSwiftPackageReference "Packages/SharedAssets" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/SharedAssets;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2BE2D9E52FA6C44A00C022BB /* SharedAssets */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BE2D9E42FA6C42600C022BB /* XCLocalSwiftPackageReference "Packages/SharedAssets" */;
+			productName = SharedAssets;
+		};
+		2BE2D9E72FA6C45900C022BB /* SharedAssets */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BE2D9E42FA6C42600C022BB /* XCLocalSwiftPackageReference "Packages/SharedAssets" */;
+			productName = SharedAssets;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2B8345A62ED25A7000227F52 /* Project object */;
 }
