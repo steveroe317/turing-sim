@@ -31,6 +31,7 @@ struct SimSelectView: View {
     
     @State private var isLoading: Bool = true
     @State private var currentSelection: TuringPointItem?
+    @State private var hiddenSelection: TuringPointItem? = nil
 
     var body: some View {
         let selectMenuItems = makeMenuItems(from: mapLabels)
@@ -45,8 +46,10 @@ struct SimSelectView: View {
                 } else {
                     SimSelectPicker(menuItems: selectMenuItems, selection: $currentSelection)
                 }
-                // Measure hidden picker height to size the placeholder ProgressView.
-                SimSelectPicker(menuItems: selectMenuItems, selection: $currentSelection)
+                // Measure hidden picker height to size the placeholder ProgressView. To handle
+                // the nil selection value, signals the picker to add a nil tagged item and drops
+                // one menu item to match the visible picker menu length.
+                SimSelectPicker(menuItems: Array(selectMenuItems.dropLast()), selection:$hiddenSelection, showNilTag: true)
                     .hidden()
                     .background(GeometryReader { geo in
                         Color.clear
