@@ -26,7 +26,7 @@ struct SimSelectView: View {
         labels.labels.keys.enumerated().map { index, point in
             TuringPointItem(id: index, point: point)
         }
-        .sorted { $0.point.f > $1.point.f }
+        .sorted { ($0.point.f, $0.point.k) > ($1.point.f, $1.point.k) }
     }
     
     @State private var isLoading: Bool = true
@@ -68,7 +68,6 @@ struct SimSelectView: View {
                 Spacer()
                 Button("Cancel", role: .cancel) {
                     showSelection = false
-                    print("no selection")
                 }
                 Spacer()
             }

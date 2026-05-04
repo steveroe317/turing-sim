@@ -100,7 +100,6 @@
 				SimShaderView.swift,
 				SimSmoothShaderView.swift,
 				SimTileView.swift,
-				SimView.swift,
 				SimViewType.swift,
 			);
 			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
@@ -116,7 +115,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				CoreView.swift,
-				DummySimView.swift,
 				SimButtonStyle.swift,
 				SimColors.swift,
 				SimControlView.swift,
