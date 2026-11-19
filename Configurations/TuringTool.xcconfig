@@ -1,0 +1,17 @@
+//
+//  TuringTool.xcconfig
+//  TuringSim
+//
+//  macOS command-line developer tool. Not part of the app schemes.
+//
+
+SDKROOT = macosx
+SUPPORTED_PLATFORMS = macosx
+
+PRODUCT_NAME = $(TARGET_NAME)
+CODE_SIGN_STYLE = Automatic
+ENABLE_HARDENED_RUNTIME = YES
+
+SWIFT_VERSION = 5.0
+SWIFT_APPROACHABLE_CONCURRENCY = YES
+SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES

@@ -15,9 +15,7 @@
 		2B0E1E122FA2EC4F00D86260 /* SWIFTUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */; };
 		2B0E1E132FA2EC4F00D86260 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */; };
 		2B0E1E142FA2EC4F00D86260 /* SWIFTUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */; };
-		2B5838AC2F0E1D6C0095305B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5838AB2F0E1D6C0095305B /* Accelerate.framework */; };
 		2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2BB8A0532F0B0EE3006FDA5D /* .gitignore */; };
-		2BE2D9E62FA6C44A00C022BB /* SharedAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 2BE2D9E52FA6C44A00C022BB /* SharedAssets */; };
 		2BE2D9E82FA6C45900C022BB /* SharedAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 2BE2D9E72FA6C45900C022BB /* SharedAssets */; };
 /* End PBXBuildFile section */
 
@@ -35,20 +33,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2B8345AD2ED25A7000227F52;
 			remoteInfo = TuringSim;
-		};
-		2BF83DFD2EDA0811009C977B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2B8345A62ED25A7000227F52 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BF83DEF2EDA0810009C977B;
-			remoteInfo = TuringSimApp;
-		};
-		2BF83E072EDA0811009C977B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2B8345A62ED25A7000227F52 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BF83DEF2EDA0810009C977B;
-			remoteInfo = TuringSimApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -69,7 +53,6 @@
 		2B051E6D2FA421BF00C04717 /* architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = architecture.md; sourceTree = "<group>"; };
 		2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SWIFTUI.md; sourceTree = "<group>"; };
-		2B5838AB2F0E1D6C0095305B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		2B6AE42A2FA6B4AC00D94158 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2B8345AE2ED25A7000227F52 /* TuringSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345BB2ED25A7200227F52 /* TuringSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,9 +61,14 @@
 		2BB8A0532F0B0EE3006FDA5D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2BE2D9E02FA6C17300C022BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BE2D9E32FA6C29A00C022BB /* Color+TuringSim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+TuringSim.swift"; sourceTree = "<group>"; };
-		2BF83DF02EDA0810009C977B /* TuringSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BF83DFC2EDA0811009C977B /* TuringSimAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BF83E062EDA0811009C977B /* TuringSimAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC06F8715297A14915E0331 /* Multiplatform.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Multiplatform.xcconfig; sourceTree = "<group>"; };
+		2BC033A322E6D37B2AE3698E /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project-Debug.xcconfig; sourceTree = "<group>"; };
+		2BC03DA4284B53869DDD2885 /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project-Release.xcconfig; sourceTree = "<group>"; };
+		2BC05F1298108A265B76542C /* Project-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project-Shared.xcconfig; sourceTree = "<group>"; };
+		2BC090D447B733DE812B165A /* TuringSim.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSim.xcconfig; sourceTree = "<group>"; };
+		2BC043A76F8FDD2E63B7E4FC /* TuringSimTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSimTests.xcconfig; sourceTree = "<group>"; };
+		2BC0E9A25CB74D7FAD9C95D5 /* TuringSimUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSimUITests.xcconfig; sourceTree = "<group>"; };
+		2BC0A13EE7778AD06CD93AAD /* TuringTool.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringTool.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -93,40 +81,6 @@
 				TuringMapPoint.swift,
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
-		};
-		2BA4DE352F476AE8000292ED /* Exceptions for "SimViews" folder in "TuringSimApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SimShaderView.swift,
-				SimSmoothShaderView.swift,
-				SimTileView.swift,
-				SimViewType.swift,
-			);
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
-		};
-		2BA4DE3E2F476B0E000292ED /* Exceptions for "Shaders" folder in "TuringSimApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SimView.metal,
-			);
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
-		};
-		2BA9E9C92EE1148D00940BA0 /* Exceptions for "Views" folder in "TuringSimApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				CoreView.swift,
-				SimButtonStyle.swift,
-				SimColors.swift,
-				SimControlView.swift,
-				SimExploreView.swift,
-				SimInformationView.swift,
-				SimParameterView.swift,
-				SimSelectPicker.swift,
-				SimSelectPickerItem.swift,
-				SimSelectView.swift,
-				TuringMapView.swift,
-			);
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
 		};
 		2BA9E9CA2EE1149000940BA0 /* Exceptions for "Views" folder in "TuringTool" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -142,30 +96,12 @@
 			);
 			target = 2B8345E52ED37FF500227F52 /* TuringTool */;
 		};
-		2BB8A0A92F0B1156006FDA5D /* Exceptions for "Data" folder in "TuringSimApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				TuringMapLabels.swift,
-			);
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
-		};
-		2BF83E232EDA0D63009C977B /* Exceptions for "Core" folder in "TuringSimApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SimActor.swift,
-				SimEngine.swift,
-				SimModel.swift,
-				SimSnapshot.swift,
-				TuringMapPoint.swift,
-			);
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2B8345B02ED25A7000227F52 /* TuringSimMac */ = {
+		2B8345B02ED25A7000227F52 /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TuringSimMac;
+			path = App;
 			sourceTree = "<group>";
 		};
 		2B8345BE2ED25A7200227F52 /* TuringSimTests */ = {
@@ -187,24 +123,17 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				2B8346122ED38D9400227F52 /* Exceptions for "Core" folder in "TuringTool" target */,
-				2BF83E232EDA0D63009C977B /* Exceptions for "Core" folder in "TuringSimApp" target */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
 		2BA4DE2E2F476AE8000292ED /* SimViews */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2BA4DE352F476AE8000292ED /* Exceptions for "SimViews" folder in "TuringSimApp" target */,
-			);
 			path = SimViews;
 			sourceTree = "<group>";
 		};
 		2BA4DE3B2F476B0E000292ED /* Shaders */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2BA4DE3E2F476B0E000292ED /* Exceptions for "Shaders" folder in "TuringSimApp" target */,
-			);
 			path = Shaders;
 			sourceTree = "<group>";
 		};
@@ -212,7 +141,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				2BA9E9CA2EE1149000940BA0 /* Exceptions for "Views" folder in "TuringTool" target */,
-				2BA9E9C92EE1148D00940BA0 /* Exceptions for "Views" folder in "TuringSimApp" target */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,24 +149,8 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				2BB8A0A82F0B1156006FDA5D /* Exceptions for "Data" folder in "TuringTool" target */,
-				2BB8A0A92F0B1156006FDA5D /* Exceptions for "Data" folder in "TuringSimApp" target */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		2BF83DF12EDA0810009C977B /* TuringSimIos */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TuringSimIos;
-			sourceTree = "<group>";
-		};
-		2BF83DFF2EDA0811009C977B /* TuringSimAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TuringSimAppTests;
-			sourceTree = "<group>";
-		};
-		2BF83E092EDA0811009C977B /* TuringSimAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TuringSimAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -273,29 +185,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BF83DED2EDA0810009C977B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2BE2D9E62FA6C44A00C022BB /* SharedAssets in Frameworks */,
-				2B5838AC2F0E1D6C0095305B /* Accelerate.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF83DF92EDA0811009C977B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF83E032EDA0811009C977B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -314,14 +203,6 @@
 				2B051E6D2FA421BF00C04717 /* architecture.md */,
 			);
 			path = docs;
-			sourceTree = "<group>";
-		};
-		2B5838AA2F0E1D6C0095305B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2B5838AB2F0E1D6C0095305B /* Accelerate.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2B6AE4282FA6B30F00D94158 /* SharedAssets */ = {
@@ -361,6 +242,7 @@
 		2B8345A52ED25A7000227F52 = {
 			isa = PBXGroup;
 			children = (
+				2BC0A984D9EC65FD4FFB12FF /* Configurations */,
 				2B051E6E2FA421BF00C04717 /* docs */,
 				2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */,
 				2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */,
@@ -370,14 +252,10 @@
 				2BA4DE2E2F476AE8000292ED /* SimViews */,
 				2BA9E9C82EE1148400940BA0 /* Views */,
 				2B8346102ED38D3900227F52 /* Core */,
-				2B8345B02ED25A7000227F52 /* TuringSimMac */,
+				2B8345B02ED25A7000227F52 /* App */,
 				2B8345BE2ED25A7200227F52 /* TuringSimTests */,
 				2B8345C82ED25A7200227F52 /* TuringSimUITests */,
 				2B8345E72ED37FF500227F52 /* TuringTool */,
-				2BF83DF12EDA0810009C977B /* TuringSimIos */,
-				2BF83DFF2EDA0811009C977B /* TuringSimAppTests */,
-				2BF83E092EDA0811009C977B /* TuringSimAppUITests */,
-				2B5838AA2F0E1D6C0095305B /* Frameworks */,
 				2B8345AF2ED25A7000227F52 /* Products */,
 				2B6AE4292FA6B30F00D94158 /* Packages */,
 			);
@@ -390,11 +268,23 @@
 				2B8345BB2ED25A7200227F52 /* TuringSimTests.xctest */,
 				2B8345C52ED25A7200227F52 /* TuringSimUITests.xctest */,
 				2B8345E62ED37FF500227F52 /* TuringTool */,
-				2BF83DF02EDA0810009C977B /* TuringSim.app */,
-				2BF83DFC2EDA0811009C977B /* TuringSimAppTests.xctest */,
-				2BF83E062EDA0811009C977B /* TuringSimAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2BC0A984D9EC65FD4FFB12FF /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				2BC06F8715297A14915E0331 /* Multiplatform.xcconfig */,
+				2BC033A322E6D37B2AE3698E /* Project-Debug.xcconfig */,
+				2BC03DA4284B53869DDD2885 /* Project-Release.xcconfig */,
+				2BC05F1298108A265B76542C /* Project-Shared.xcconfig */,
+				2BC090D447B733DE812B165A /* TuringSim.xcconfig */,
+				2BC043A76F8FDD2E63B7E4FC /* TuringSimTests.xcconfig */,
+				2BC0E9A25CB74D7FAD9C95D5 /* TuringSimUITests.xcconfig */,
+				2BC0A13EE7778AD06CD93AAD /* TuringTool.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,7 +303,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2B8345B02ED25A7000227F52 /* TuringSimMac */,
+				2B8345B02ED25A7000227F52 /* App */,
 				2B8346102ED38D3900227F52 /* Core */,
 				2BA4DE2E2F476AE8000292ED /* SimViews */,
 				2BA4DE3B2F476B0E000292ED /* Shaders */,
@@ -496,75 +386,6 @@
 			productReference = 2B8345E62ED37FF500227F52 /* TuringTool */;
 			productType = "com.apple.product-type.tool";
 		};
-		2BF83DEF2EDA0810009C977B /* TuringSimApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BF83E142EDA0811009C977B /* Build configuration list for PBXNativeTarget "TuringSimApp" */;
-			buildPhases = (
-				2BF83DEC2EDA0810009C977B /* Sources */,
-				2BF83DED2EDA0810009C977B /* Frameworks */,
-				2BF83DEE2EDA0810009C977B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				2BF83DF12EDA0810009C977B /* TuringSimIos */,
-			);
-			name = TuringSimApp;
-			packageProductDependencies = (
-				2BE2D9E52FA6C44A00C022BB /* SharedAssets */,
-			);
-			productName = TuringSimApp;
-			productReference = 2BF83DF02EDA0810009C977B /* TuringSim.app */;
-			productType = "com.apple.product-type.application";
-		};
-		2BF83DFB2EDA0811009C977B /* TuringSimAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BF83E152EDA0811009C977B /* Build configuration list for PBXNativeTarget "TuringSimAppTests" */;
-			buildPhases = (
-				2BF83DF82EDA0811009C977B /* Sources */,
-				2BF83DF92EDA0811009C977B /* Frameworks */,
-				2BF83DFA2EDA0811009C977B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BF83DFE2EDA0811009C977B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				2BF83DFF2EDA0811009C977B /* TuringSimAppTests */,
-			);
-			name = TuringSimAppTests;
-			packageProductDependencies = (
-			);
-			productName = TuringSimAppTests;
-			productReference = 2BF83DFC2EDA0811009C977B /* TuringSimAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2BF83E052EDA0811009C977B /* TuringSimAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BF83E162EDA0811009C977B /* Build configuration list for PBXNativeTarget "TuringSimAppUITests" */;
-			buildPhases = (
-				2BF83E022EDA0811009C977B /* Sources */,
-				2BF83E032EDA0811009C977B /* Frameworks */,
-				2BF83E042EDA0811009C977B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BF83E082EDA0811009C977B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				2BF83E092EDA0811009C977B /* TuringSimAppUITests */,
-			);
-			name = TuringSimAppUITests;
-			packageProductDependencies = (
-			);
-			productName = TuringSimAppUITests;
-			productReference = 2BF83E062EDA0811009C977B /* TuringSimAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -589,17 +410,6 @@
 					2B8345E52ED37FF500227F52 = {
 						CreatedOnToolsVersion = 26.1;
 					};
-					2BF83DEF2EDA0810009C977B = {
-						CreatedOnToolsVersion = 26.1;
-					};
-					2BF83DFB2EDA0811009C977B = {
-						CreatedOnToolsVersion = 26.1;
-						TestTargetID = 2BF83DEF2EDA0810009C977B;
-					};
-					2BF83E052EDA0811009C977B = {
-						CreatedOnToolsVersion = 26.1;
-						TestTargetID = 2BF83DEF2EDA0810009C977B;
-					};
 				};
 			};
 			buildConfigurationList = 2B8345A92ED25A7000227F52 /* Build configuration list for PBXProject "TuringSim" */;
@@ -623,9 +433,6 @@
 				2B8345BA2ED25A7200227F52 /* TuringSimTests */,
 				2B8345C42ED25A7200227F52 /* TuringSimUITests */,
 				2B8345E52ED37FF500227F52 /* TuringTool */,
-				2BF83DEF2EDA0810009C977B /* TuringSimApp */,
-				2BF83DFB2EDA0811009C977B /* TuringSimAppTests */,
-				2BF83E052EDA0811009C977B /* TuringSimAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -651,31 +458,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2B8345C32ED25A7200227F52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF83DEE2EDA0810009C977B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2B0E1E112FA2EC4F00D86260 /* CLAUDE.md in Resources */,
-				2B0E1E122FA2EC4F00D86260 /* SWIFTUI.md in Resources */,
-				2B051E712FA421BF00C04717 /* code-review-2026-04-29.md in Resources */,
-				2B051E722FA421BF00C04717 /* architecture.md in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF83DFA2EDA0811009C977B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF83E042EDA0811009C977B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -713,27 +495,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BF83DEC2EDA0810009C977B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF83DF82EDA0811009C977B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF83E022EDA0811009C977B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -747,463 +508,76 @@
 			target = 2B8345AD2ED25A7000227F52 /* TuringSim */;
 			targetProxy = 2B8345C62ED25A7200227F52 /* PBXContainerItemProxy */;
 		};
-		2BF83DFE2EDA0811009C977B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
-			targetProxy = 2BF83DFD2EDA0811009C977B /* PBXContainerItemProxy */;
-		};
-		2BF83E082EDA0811009C977B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BF83DEF2EDA0810009C977B /* TuringSimApp */;
-			targetProxy = 2BF83E072EDA0811009C977B /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2B8345CD2ED25A7200227F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC033A322E6D37B2AE3698E /* Project-Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.1;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2B8345CE2ED25A7200227F52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC03DA4284B53869DDD2885 /* Project-Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
 		2B8345D02ED25A7200227F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC090D447B733DE812B165A /* TuringSim.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_USE_OPTIMIZATION_PROFILE = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSim;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		2B8345D12ED25A7200227F52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC090D447B733DE812B165A /* TuringSim.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_USE_OPTIMIZATION_PROFILE = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSim;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		2B8345D32ED25A7200227F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC043A76F8FDD2E63B7E4FC /* TuringSimTests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuringSim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TuringSim";
 			};
 			name = Debug;
 		};
 		2B8345D42ED25A7200227F52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC043A76F8FDD2E63B7E4FC /* TuringSimTests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuringSim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TuringSim";
 			};
 			name = Release;
 		};
 		2B8345D62ED25A7200227F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC0E9A25CB74D7FAD9C95D5 /* TuringSimUITests.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = TuringSim;
 			};
 			name = Debug;
 		};
 		2B8345D72ED25A7200227F52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC0E9A25CB74D7FAD9C95D5 /* TuringSimUITests.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = TuringSim;
 			};
 			name = Release;
 		};
 		2B8345EB2ED37FF500227F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC0A13EE7778AD06CD93AAD /* TuringTool.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		2B8345EC2ED37FF500227F52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC0A13EE7778AD06CD93AAD /* TuringTool.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UU7QAR4ZXB;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		2BF83E0E2EDA0811009C977B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSim;
-				PRODUCT_NAME = TuringSim;
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2BF83E0F2EDA0811009C977B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSim;
-				PRODUCT_NAME = TuringSim;
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2BF83E102EDA0811009C977B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuringSimApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TuringSimApp";
-			};
-			name = Debug;
-		};
-		2BF83E112EDA0811009C977B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuringSimApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TuringSimApp";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2BF83E122EDA0811009C977B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TuringSimApp;
-			};
-			name = Debug;
-		};
-		2BF83E132EDA0811009C977B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roedesigns.play.TuringSimAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TuringSimApp;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1255,33 +629,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BF83E142EDA0811009C977B /* Build configuration list for PBXNativeTarget "TuringSimApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BF83E0E2EDA0811009C977B /* Debug */,
-				2BF83E0F2EDA0811009C977B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BF83E152EDA0811009C977B /* Build configuration list for PBXNativeTarget "TuringSimAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BF83E102EDA0811009C977B /* Debug */,
-				2BF83E112EDA0811009C977B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BF83E162EDA0811009C977B /* Build configuration list for PBXNativeTarget "TuringSimAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BF83E122EDA0811009C977B /* Debug */,
-				2BF83E132EDA0811009C977B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
@@ -1292,11 +639,6 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2BE2D9E52FA6C44A00C022BB /* SharedAssets */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2BE2D9E42FA6C42600C022BB /* XCLocalSwiftPackageReference "Packages/SharedAssets" */;
-			productName = SharedAssets;
-		};
 		2BE2D9E72FA6C45900C022BB /* SharedAssets */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2BE2D9E42FA6C42600C022BB /* XCLocalSwiftPackageReference "Packages/SharedAssets" */;

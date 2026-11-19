@@ -15,9 +15,37 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BF83DEF2EDA0810009C977B"
+               BlueprintIdentifier = "2B8345AD2ED25A7000227F52"
                BuildableName = "TuringSim.app"
-               BlueprintName = "TuringSimApp"
+               BlueprintName = "TuringSim"
+               ReferencedContainer = "container:TuringSim.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B8345BA2ED25A7200227F52"
+               BuildableName = "TuringSimTests.xctest"
+               BlueprintName = "TuringSimTests"
+               ReferencedContainer = "container:TuringSim.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B8345C42ED25A7200227F52"
+               BuildableName = "TuringSimUITests.xctest"
+               BlueprintName = "TuringSimUITests"
                ReferencedContainer = "container:TuringSim.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,9 +63,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BF83E052EDA0811009C977B"
-               BuildableName = "TuringSimAppUITests.xctest"
-               BlueprintName = "TuringSimAppUITests"
+               BlueprintIdentifier = "2B8345BA2ED25A7200227F52"
+               BuildableName = "TuringSimTests.xctest"
+               BlueprintName = "TuringSimTests"
                ReferencedContainer = "container:TuringSim.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -46,9 +74,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BF83DFB2EDA0811009C977B"
-               BuildableName = "TuringSimAppTests.xctest"
-               BlueprintName = "TuringSimAppTests"
+               BlueprintIdentifier = "2B8345C42ED25A7200227F52"
+               BuildableName = "TuringSimUITests.xctest"
+               BlueprintName = "TuringSimUITests"
                ReferencedContainer = "container:TuringSim.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -68,9 +96,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BF83DEF2EDA0810009C977B"
+            BlueprintIdentifier = "2B8345AD2ED25A7000227F52"
             BuildableName = "TuringSim.app"
-            BlueprintName = "TuringSimApp"
+            BlueprintName = "TuringSim"
             ReferencedContainer = "container:TuringSim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,9 +113,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BF83DEF2EDA0810009C977B"
+            BlueprintIdentifier = "2B8345AD2ED25A7000227F52"
             BuildableName = "TuringSim.app"
-            BlueprintName = "TuringSimApp"
+            BlueprintName = "TuringSim"
             ReferencedContainer = "container:TuringSim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

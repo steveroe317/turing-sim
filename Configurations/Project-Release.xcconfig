@@ -1,0 +1,14 @@
+//
+//  Project-Release.xcconfig
+//  TuringSim
+//
+//  Project-level Release settings. Used by Profile and Archive in every scheme.
+//
+
+#include "Project-Shared.xcconfig"
+
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+ENABLE_NS_ASSERTIONS = NO
+MTL_ENABLE_DEBUG_INFO = NO
+SWIFT_COMPILATION_MODE = wholemodule
+VALIDATE_PRODUCT[sdk=iphone*] = YES

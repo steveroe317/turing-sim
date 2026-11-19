@@ -5,3 +5,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Framework and language guidelines
 
 @SWIFTUI.md
+@SCHEMES.md

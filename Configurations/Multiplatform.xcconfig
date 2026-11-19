@@ -1,0 +1,15 @@
+//
+//  Multiplatform.xcconfig
+//  TuringSim
+//
+//  Platform support shared by the app and its test targets: native iOS, iPadOS,
+//  and macOS from a single target. Mac Catalyst and "Designed for iPad" are off
+//  because the app ships a native macOS build.
+//
+
+SDKROOT = auto
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator macosx
+TARGETED_DEVICE_FAMILY = 1,2
+SUPPORTS_MACCATALYST = NO
+SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO
+SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO

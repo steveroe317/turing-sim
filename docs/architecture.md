@@ -2,7 +2,7 @@
 
 ## Overview
 
-TuringSim is a real-time interactive simulation of Gray-Scott reaction-diffusion systems, running on iOS and macOS. It visualises how two chemicals — an activator and an inhibitor — spread across a 201×201 toroidal grid and react with each other, producing the organic-looking patterns (spots, stripes, coral-like branching) that Alan Turing first described mathematically in 1952.
+TuringSim is a real-time interactive simulation of Gray-Scott reaction-diffusion systems, running on iOS, iPadOS, and macOS. It visualises how two chemicals — an activator and an inhibitor — spread across a 201×201 toroidal grid and react with each other, producing the organic-looking patterns (spots, stripes, coral-like branching) that Alan Turing first described mathematically in 1952.
 
 The app lets you watch patterns evolve live, tune the two key parameters (`f` and `k`) by hand or by picking from 13 named presets, and explore the parameter space on an interactive map.
 
@@ -17,23 +17,35 @@ TuringSim/
 ├── SimViews/       # Three interchangeable rendering backends
 ├── Views/          # All other UI (controls, info, parameter exploration)
 ├── Shaders/        # Metal shader source
-├── TuringSimIos/   # iOS app entry point
-├── TuringSimMac/   # macOS app entry point
-├── TuringTool/     # Command-line diagnostic tool
-├── TuringSimTests/ # (placeholder) unit tests
-└── docs/           # This file
+├── App/              # Multiplatform app entry point, ContentView, asset catalog
+├── Configurations/   # .xcconfig build settings (project, per-target)
+├── Packages/         # Local Swift packages (SharedAssets)
+├── TuringTool/       # Command-line diagnostic tool
+├── TuringSimTests/   # (placeholder) unit tests
+├── TuringSimUITests/ # (placeholder) UI tests
+└── docs/             # This file
 ```
 
 ### Targets
 
 | Target | Platform | Description |
 |--------|----------|-------------|
-| `TuringSimApp` | iOS 26.1 | Primary mobile app |
-| `TuringSim` | macOS 26.1 | Desktop app |
+| `TuringSim` | iOS / iPadOS / macOS 26.1 | Single multiplatform app target |
+| `TuringSimTests` | iOS / iPadOS / macOS | Placeholder unit test suite |
+| `TuringSimUITests` | iOS / iPadOS / macOS | Placeholder UI test suite |
 | `TuringTool` | macOS | CLI tool for engine diagnostics |
-| `TuringSimAppTests` / `TuringSimTests` | — | Placeholder unit test suites |
 
-The `Core/`, `Data/`, `Views/`, `SimViews/`, and `Shaders/` folders are shared between the iOS and macOS targets. Each platform has its own `ContentView` that bootstraps `CoreView` with a chosen render mode.
+All app sources (`App/`, `Core/`, `Data/`, `Views/`, `SimViews/`, `Shaders/`) compile into the one `TuringSim` target. Small platform differences are handled with modifier-level conditionals (e.g. the iOS wheel picker in `SimSelectPicker`, the background color in `ContentView`). Build settings live in `Configurations/*.xcconfig`; platform-specific values use `[sdk=iphone*]` / `[sdk=macosx*]` conditions.
+
+### Schemes
+
+| Scheme | Contents | Configurations |
+|--------|----------|----------------|
+| `TuringSim-Development` | App, unit tests, UI tests | Run/Test/Analyze → Debug; Profile/Archive → Release |
+| `TuringSim-Production` | App only | Run/Analyze → Debug; Profile/Archive → Release (use for App Store archives) |
+| `TuringTool` | CLI tool | Run/Test/Analyze → Debug; Profile/Archive → Release |
+
+All schemes are shared (`TuringSim.xcodeproj/xcshareddata/xcschemes`). Pick the destination (iPhone, iPad, or My Mac) to choose the platform.
 
 ---
 
@@ -347,8 +359,7 @@ The app targets a wide range of screen sizes (iPhone SE through iPad to Mac) wit
 | `Views/TuringMapView.swift` | Canvas-to-(f,k) coordinate mapping; gesture handling |
 | `Views/SimExploreView.swift` | Local state pattern for parameter exploration |
 | `Views/SimSelectView.swift` | Nearest-preset initialisation; wheel picker |
-| `TuringSimIos/ContentView.swift` | iOS entry point; initial render mode selection |
-| `TuringSimMac/ContentView.swift` | macOS entry point; initial render mode selection |
+| `App/ContentView.swift` | App entry view; initial render mode selection |
 | `TuringTool/main.swift` | Minimal CLI harness for running the engine headlessly |
 
 ---
