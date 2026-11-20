@@ -18,8 +18,6 @@ let evolveResult = await engine.evolve(for: generations)
 
 print("\(evolveResult.generation) Generations")
 
-for (index, value) in evolveResult.B.enumerated() {
-    if abs(value) > 0.00001 {
-        print(value)
-    }
+for value in evolveResult.B where abs(value) > 0.00001 {
+    print(value)
 }
