@@ -75,7 +75,9 @@ final class SimModel {
         }
     }
 
-    deinit {
+    /// Runs on the main actor (SE-0371) so it can safely read the
+    /// main actor-isolated `simTask` and stop the simulation loop.
+    isolated deinit {
         simTask?.cancel()
     }
     
