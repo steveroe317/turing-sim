@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B051E6F2FA421BF00C04717 /* code-review-2026-04-29.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B051E6B2FA421BF00C04717 /* code-review-2026-04-29.md */; };
-		2B051E702FA421BF00C04717 /* architecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B051E6D2FA421BF00C04717 /* architecture.md */; };
-		2B051E712FA421BF00C04717 /* code-review-2026-04-29.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B051E6B2FA421BF00C04717 /* code-review-2026-04-29.md */; };
-		2B051E722FA421BF00C04717 /* architecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B051E6D2FA421BF00C04717 /* architecture.md */; };
-		2B0E1E112FA2EC4F00D86260 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */; };
-		2B0E1E122FA2EC4F00D86260 /* SWIFTUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */; };
-		2B0E1E132FA2EC4F00D86260 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */; };
-		2B0E1E142FA2EC4F00D86260 /* SWIFTUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */; };
-		2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2BB8A0532F0B0EE3006FDA5D /* .gitignore */; };
 		2BE2D9E82FA6C45900C022BB /* SharedAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 2BE2D9E72FA6C45900C022BB /* SharedAssets */; };
 /* End PBXBuildFile section */
 
@@ -442,11 +433,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B051E6F2FA421BF00C04717 /* code-review-2026-04-29.md in Resources */,
-				2B051E702FA421BF00C04717 /* architecture.md in Resources */,
-				2BB8A0542F0B0EEC006FDA5D /* .gitignore in Resources */,
-				2B0E1E132FA2EC4F00D86260 /* CLAUDE.md in Resources */,
-				2B0E1E142FA2EC4F00D86260 /* SWIFTUI.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
