@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		2B051E6B2FA421BF00C04717 /* code-review-2026-04-29.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "code-review-2026-04-29.md"; sourceTree = "<group>"; };
 		2B051E6D2FA421BF00C04717 /* architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = architecture.md; sourceTree = "<group>"; };
-		2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SWIFTUI.md; sourceTree = "<group>"; };
 		2B6AE42A2FA6B4AC00D94158 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2B8345AE2ED25A7000227F52 /* TuringSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,16 +49,16 @@
 		2B8345C52ED25A7200227F52 /* TuringSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8345E62ED37FF500227F52 /* TuringTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TuringTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB8A0532F0B0EE3006FDA5D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2BC033A322E6D37B2AE3698E /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		2BC03DA4284B53869DDD2885 /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Release.xcconfig"; sourceTree = "<group>"; };
+		2BC043A76F8FDD2E63B7E4FC /* TuringSimTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSimTests.xcconfig; sourceTree = "<group>"; };
+		2BC05F1298108A265B76542C /* Project-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Shared.xcconfig"; sourceTree = "<group>"; };
+		2BC06F8715297A14915E0331 /* Multiplatform.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Multiplatform.xcconfig; sourceTree = "<group>"; };
+		2BC090D447B733DE812B165A /* TuringSim.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSim.xcconfig; sourceTree = "<group>"; };
+		2BC0A13EE7778AD06CD93AAD /* TuringTool.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringTool.xcconfig; sourceTree = "<group>"; };
+		2BC0E9A25CB74D7FAD9C95D5 /* TuringSimUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSimUITests.xcconfig; sourceTree = "<group>"; };
 		2BE2D9E02FA6C17300C022BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BE2D9E32FA6C29A00C022BB /* Color+TuringSim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+TuringSim.swift"; sourceTree = "<group>"; };
-		2BC06F8715297A14915E0331 /* Multiplatform.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Multiplatform.xcconfig; sourceTree = "<group>"; };
-		2BC033A322E6D37B2AE3698E /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project-Debug.xcconfig; sourceTree = "<group>"; };
-		2BC03DA4284B53869DDD2885 /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project-Release.xcconfig; sourceTree = "<group>"; };
-		2BC05F1298108A265B76542C /* Project-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project-Shared.xcconfig; sourceTree = "<group>"; };
-		2BC090D447B733DE812B165A /* TuringSim.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSim.xcconfig; sourceTree = "<group>"; };
-		2BC043A76F8FDD2E63B7E4FC /* TuringSimTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSimTests.xcconfig; sourceTree = "<group>"; };
-		2BC0E9A25CB74D7FAD9C95D5 /* TuringSimUITests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringSimUITests.xcconfig; sourceTree = "<group>"; };
-		2BC0A13EE7778AD06CD93AAD /* TuringTool.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TuringTool.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -235,7 +234,6 @@
 			children = (
 				2BC0A984D9EC65FD4FFB12FF /* Configurations */,
 				2B051E6E2FA421BF00C04717 /* docs */,
-				2B0E1E0F2FA2EC4F00D86260 /* CLAUDE.md */,
 				2B0E1E102FA2EC4F00D86260 /* SWIFTUI.md */,
 				2BB8A0532F0B0EE3006FDA5D /* .gitignore */,
 				2BA4DE3B2F476B0E000292ED /* Shaders */,
